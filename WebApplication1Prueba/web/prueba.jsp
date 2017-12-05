@@ -26,10 +26,12 @@
 String usuario = request.getParameter("user");
 String password = request.getParameter("password");
 
+// String url = "jdbc:mysql://localhost:3306/prueba";
+//String user = "root";
+//String pass = "";
+
 String url = "jdbc:mysql://10.0.0.110:3306/dbernal";
-//String url = "jdbc:mysql://erp.dafnube.com:33340/prueba";
-//String user = "DAF";
-//String pass = "DTI";
+
 String user = "root";
 String pass = "root";
 
