@@ -47,7 +47,7 @@ try{
 	java.sql.PreparedStatement miConsulta = myConn.prepareStatement(myQuery);
 	miConsulta.setString(1, usuario);
  miConsulta.setString(2, password);
-	
+ 
 	ResultSet registros = miConsulta.executeQuery();
 	String mensaje;
 	if(registros.absolute(1)){
