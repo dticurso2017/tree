@@ -20,7 +20,6 @@
  </head>
   <%@ page import= "java.sql.*" %>
         
-      
 <%
 
 String usuario = request.getParameter("user");
