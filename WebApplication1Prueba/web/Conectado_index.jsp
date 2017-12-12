@@ -15,20 +15,19 @@
         <title>Página Principal</title>
     </head>
     <body>
-        <header>
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                    <span class="glyphicon glyphicon-th-list"></span>
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
-                    </jsp:useBean>
-                    <li>Bienvenido, 
-                        <%=datosUsuario.getUser() %>
-                    </li>
-                    <li><a href="index.jsp">Salir</a></li>
-                </ul>
-            </div>
-        </header>
+        <div class="btn-group pull-right">
+            <button class="btn btn-primary dropdown-toggle pull-right" type="button" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-th-list"></span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
+                </jsp:useBean>
+                <li><a>Bienvenido, 
+                        <%=datosUsuario.getUser()%>
+                </a></li>
+                <li><a href="index.jsp">Salir</a></li>
+            </ul>
+        </div>
     </body>
 </html>
