@@ -16,12 +16,12 @@
         <div id="box1">
             
             <h1>Nuevo usuario</h1>
-            <form action = "Reg.jsp" method = "GET">
-                <input type="text" placeholder="Inserta nuevo usuario" name="usuario"/>
-                <input type="password" placeholder="Inserta nueva contraseña" name="pass"/>
+            <form action = "registroUsuarioEnBD.jsp" method = "GET">
+                <input type="text" placeholder="Inserta nuevo usuario" name="user"/>
+                <input type="password" placeholder="Inserta nueva contraseña" name="password"/>
                 <input type="text" placeholder="Inserta e-mail" name="email"/>
-                <input type="button" name="boton" value="Aceptar"/>
-                <input type="button" name="boton2" value="Cancelar" onclick='javascript:history.go(-1);'/>
+                <input type="submit" value="Aceptar"/>
+                <input type="button" value="Cancelar" onclick='javascript:history.go(-1);'/>
             </form>
         </div>
     </body>
