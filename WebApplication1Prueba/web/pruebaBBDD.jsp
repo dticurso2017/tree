@@ -16,7 +16,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/websocket_conexion.js"></script>
-        <title>JSP Page</title>  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Error conexión</title>  
     </head>
     <%@ page import= "java.sql.*" %>
     <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
@@ -29,7 +32,7 @@
 
         String url = "jdbc:mysql://10.0.0.110:3306/prueba";
         String user = "root";
-        String pass = "root";
+        String pass = "";
         /*
     String url = "jdbc:mysql://10.0.0.110:3306/dbernal";
 
@@ -37,7 +40,7 @@
     String pass = "root";
          */
 
-    //carga dinámica de driver
+        //carga dinámica de driver
         Class.forName("com.mysql.jdbc.Driver");
 
         try {
@@ -61,12 +64,34 @@
             }
 
         } catch (Exception e) {
-            out.println("Error de conexion");
+            //.println("Error de conexion");
             e.printStackTrace();
         }
 
     %>
     <body>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="error-template">
+                        <h1>
+                            Vaya!!</h1>
+                        <h2>
+                            Error de conexión con la BBDD</h2>
+                        <div class="error-details">
+                            La conexión ha fallado
+                        </div>
+                        <div class="error-actions">
+                            <a href="index.jsp" class="btn btn-primary btn-lg">
+                                <span class="glyphicon glyphicon-home"></span>
+                                Vuelve a la página </a>
+                            <a href="https://support.google.com/?hl=es" class="btn btn-default btn-lg">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                                Contactar a Soporte</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
