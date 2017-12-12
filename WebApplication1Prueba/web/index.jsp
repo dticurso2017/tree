@@ -13,13 +13,19 @@
         <title>Login</title>
     </head>
     <body>
+      <script language="JavaScript">
+            function myfunction(url) {
+            window.location.href = url;
+        }
+        
+        </script>
         <div id="box1">
             <h1>Login</h1>
-            <form action = "prueba.jsp" method = "GET">
+            <form action = "pruebaBBDD.jsp" method = "GET">
                 <input type="text" placeholder="Inserta tu usuario" name="user"/>
                 <input type="password" placeholder="Inserta tu contraseña" name="password"/>
                 <input type="submit" name="boton" value="Entrar"/>
-                <a href="./Reg.jsp">Registrar</a>
+                <a href="./RegBBDD.jsp">Registrar</a>
             </form>
         </div>
         
