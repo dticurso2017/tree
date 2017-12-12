@@ -32,7 +32,7 @@
 
         String url = "jdbc:mysql://10.0.0.110:3306/prueba";
         String user = "root";
-        String pass = "";
+        String pass = "root";
         /*
     String url = "jdbc:mysql://10.0.0.110:3306/dbernal";
 

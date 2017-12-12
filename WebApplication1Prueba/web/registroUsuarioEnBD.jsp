@@ -17,6 +17,9 @@
         <title>JSP Page</title>  
     </head>
     <%@ page import= "java.sql.*" %>
+    <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
+        <jsp:setProperty name = "datosUsuario" property = "*"/>
+    </jsp:useBean>
     <%
         String usuario = request.getParameter("user");
         String password = request.getParameter("password");
@@ -46,7 +49,7 @@
                 miConsulta2.setString(2, password);
                 miConsulta2.setString(3, email);
                 miConsulta2.executeUpdate();
-                out.println("Usuario creado");
+                response.sendRedirect("./Conectado_index.jsp");
             }
 
         } catch (Exception e) {

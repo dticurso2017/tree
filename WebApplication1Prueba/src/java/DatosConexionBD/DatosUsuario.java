@@ -16,23 +16,17 @@ public class DatosUsuario implements Serializable {
 
     private String user = null;
     private String password = null;
+    private String email = null;
 
     public DatosUsuario() {
         super();
     }
 
-    public DatosUsuario(String user, String password) {
+    public DatosUsuario(String user, String password, String email) {
         super();
         this.user = user;
         this.password = password;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+        this.email = email;
     }
 
     public String getUser() {
@@ -43,11 +37,28 @@ public class DatosUsuario implements Serializable {
         return password;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.user);
-        hash = 41 * hash + Objects.hashCode(this.password);
+        hash = 83 * hash + Objects.hashCode(this.user);
+        hash = 83 * hash + Objects.hashCode(this.password);
+        hash = 83 * hash + Objects.hashCode(this.email);
         return hash;
     }
 
@@ -69,7 +80,12 @@ public class DatosUsuario implements Serializable {
         if (!Objects.equals(this.password, other.password)) {
             return false;
         }
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
         return true;
     }
+
+    
 
 }
