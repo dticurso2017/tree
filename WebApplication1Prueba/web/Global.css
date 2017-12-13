@@ -26,3 +26,7 @@
   margin: 1%;
 
 }
+.container-cabecera{
+  align-content: flex-end;
+  padding-right: 1%;
+}

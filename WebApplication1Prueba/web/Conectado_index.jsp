@@ -18,7 +18,7 @@
   <body>
     <div class="container-fluid-caja">  
       <div class="navbar navbar-default" role="navigation">
-        <div class="container"> 
+        <div class="container-cabecera"> 
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="icon-bar"></span>
