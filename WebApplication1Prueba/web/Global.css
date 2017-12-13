@@ -20,7 +20,7 @@
   .row.content {height: auto;} 
 }
 .container-fluid-caja{
-  margin: 0.5%;
+  margin: 1%;
 }
 .content-caja{
   margin: 1%;
@@ -28,5 +28,14 @@
 }
 .container-cabecera{
   align-content: flex-end;
-  padding-right: 1%;
+  padding-right: 1.5%;
+}
+.nav-tabs {
+ margin-top: -1.5%;
+}
+.navbar-right {
+ margin-right:0.5%;
+}
+.loggin-button {
+ margin-bottom: -27%;
 }
