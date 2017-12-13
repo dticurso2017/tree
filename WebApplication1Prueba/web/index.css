@@ -32,9 +32,17 @@ body {
     transition: all 0.1s linear;
 }
 .panel-login>.panel-heading a.active{
-    color: #029f5b;
     font-size: 18px;
 }
+
+.panel-login>.panel-heading a.login-active{
+    color: #53A3CD;
+}
+
+.panel-login>.panel-heading a.register-active{
+    color: #029f5b;
+}
+
 .panel-login>.panel-heading hr{
     margin-top: 10px;
     margin-bottom: 0px;
@@ -105,4 +113,8 @@ body {
     color: #fff;
     background-color: #1CA347;
     border-color: #1CA347;
+}
+
+.error-details {
+    color: red;
 }

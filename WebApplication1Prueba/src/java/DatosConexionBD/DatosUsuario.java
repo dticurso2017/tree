@@ -17,8 +17,8 @@ public class DatosUsuario implements Serializable {
     private String user = null;
     private String password = null;
     private String email = null;
-    private String ErrorRegistro = "Algo";
-    private String ErrorLogin = "Algo";
+    private String ErrorRegistro = "";
+    private String ErrorLogin = "";
 
     public DatosUsuario() {
         super();

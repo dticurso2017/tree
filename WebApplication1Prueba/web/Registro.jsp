@@ -4,7 +4,6 @@
     Author     : User
 --%>
 <%@page import="java.text.*"%>
-<%@page import="org.eclipse.jdt.internal.compiler.batch.*"%>
 <%@page import="javax.lang.model.element.*"%>
 <%@page import="javax.swing.text.*"%>
 <%@page import="javax.swing.JOptionPane"%>
@@ -18,7 +17,6 @@
         <title>JSP Page</title>  
     </head>
     <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
-        <jsp:setProperty name = "datosUsuario" property = "*"/>
     </jsp:useBean>
     <%
         String usuario = request.getParameter("user");
@@ -31,17 +29,25 @@
         Class.forName("com.mysql.jdbc.Driver");
         try {
             Connection myConn = DriverManager.getConnection(url, user, pass);
-
-            if (usuario.equals("") || password.equals("") || email.equals("")) {
-                datosUsuario.setErrorRegistro("Los datos no pueden estar vacios");
+            
+            String myQuerySearch = "SELECT * FROM usuarios WHERE user = ? OR email = ?";
+            java.sql.PreparedStatement miConsultaSearch = myConn.prepareStatement(myQuerySearch);
+            miConsultaSearch.setString(1, usuario);
+            miConsultaSearch.setString(2, email);
+            ResultSet registros = miConsultaSearch.executeQuery();
+            
+            if (registros.absolute(1)) {
+                datosUsuario.setErrorRegistro("El usuario ya existe, intenta crear otro usuario");
                 response.sendRedirect("index.jsp");
             } else {
                 String myQueryInsert = "INSERT INTO usuarios (user, password, email) VALUES (?, ?, ?)";
-                java.sql.PreparedStatement miConsulta = myConn.prepareStatement(myQueryInsert);
-                miConsulta.setString(1, usuario);
-                miConsulta.setString(2, password);
-                miConsulta.setString(3, email);
-                miConsulta.executeUpdate();
+                java.sql.PreparedStatement miConsultaInsert = myConn.prepareStatement(myQueryInsert);
+                miConsultaInsert.setString(1, usuario);
+                miConsultaInsert.setString(2, password);
+                miConsultaInsert.setString(3, email);
+                miConsultaInsert.executeUpdate();
+                
+                datosUsuario.setErrorLogin("");
                 datosUsuario.setErrorRegistro("");
                 datosUsuario.setUser(usuario);
                 response.sendRedirect("Conectado_index.jsp");
@@ -53,6 +59,6 @@
         }
     %>
     <body>
-        
+
     </body>
 </html>

@@ -26,7 +26,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <a href="#" class="active" id="login-form-link">
+                                    <a href="#" class="active login-active" id="login-form-link">
                                         Login
                                     </a>
                                 </div>
@@ -44,10 +44,10 @@
                                     <form id="login-form" action="Login.jsp" method="GET" role="form" style="display: block;">
                                         <p class="error-details"><%=datosUsuario.getErrorLogin()%></p>
                                         <div class="form-group">
-                                            <input type="text" name="user" id="username" tabindex="1" class="form-control" placeholder="Inserta tu usuario">
+                                            <input type="text" name="user" id="username" tabindex="1" class="form-control" placeholder="Inserta tu usuario" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Inserta tu contraseña">
+                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Inserta tu contraseña" required>
                                         </div>
                                         <div class="form-group text-center">
                                             <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
@@ -74,16 +74,16 @@
                                     <form id="register-form" action="Registro.jsp" method="GET" role="form" style="display: none;">
                                         <p class="error-details"><%=datosUsuario.getErrorRegistro()%></p>
                                         <div class="form-group">
-                                            <input type="text" name="user" id="username" tabindex="1" class="form-control" placeholder="Inserta un usuario" value="">
+                                            <input type="text" name="user" id="username" tabindex="1" class="form-control" placeholder="Inserta un usuario" value="" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Inserta e-mail" value="">
+                                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Inserta e-mail" value="" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Inserta una contraseña">
+                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Inserta una contraseña" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmación de la contraseña">
+                                            <input type="password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmación de la contraseña" required>
                                         </div>
                                         <div class="form-group">
                                             <div class="row">
