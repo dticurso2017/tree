@@ -10,24 +10,36 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="Global.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Página Principal</title>
     </head>
     <body>
-        <div class="btn-group pull-right">
-            <button class="btn btn-primary dropdown-toggle pull-right" type="button" data-toggle="dropdown">
-                <span class="glyphicon glyphicon-th-list"></span>
-                <span class="caret"></span>
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container"> 
+        <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
             </button>
-            <ul class="dropdown-menu dropdown-menu-right">
-                <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
-                </jsp:useBean>
-                <li><a>Bienvenido, 
-                        <%=datosUsuario.getUser()%>
-                </a></li>
-                <li><a href="index.jsp">Salir</a></li>
-            </ul>
         </div>
+        <div class="collapse navbar-collapse pull-right"></div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               <span class="glyphicon glyphicon-th-list icon-size"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
+                </jsp:useBean>
+              <li><a> <%=datosUsuario.getUser()%></a></li>
+              <li><a href="index.jsp">Sign Out  <span class="glyphicon glyphicon-log-out "></span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>        
     </body>
 </html>
