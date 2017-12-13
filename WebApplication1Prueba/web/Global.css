@@ -1,3 +1,28 @@
 .icon-size{
   font-size: 30px;
 }
+.text-left-top{
+  text-align: initial;
+}
+.sidenav {
+  background-color: #f1f1f1;
+  height: 100%;
+  border-radius: 10px;
+}
+.tab-pane{
+  width:  90%;
+}
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height: auto;} 
+}
+.container-fluid-caja{
+  margin: 0.5%;
+}
+.content-caja{
+  margin: 1%;
+
+}
