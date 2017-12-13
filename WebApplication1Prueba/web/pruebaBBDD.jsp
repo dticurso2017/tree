@@ -84,7 +84,7 @@
                         <div class="error-actions">
                             <a href="index.jsp" class="btn btn-primary btn-lg">
                                 <span class="glyphicon glyphicon-home"></span>
-                                Vuelve a la página </a>
+                                Vuelve a la página anterior </a>
                             <a href="https://support.google.com/?hl=es" class="btn btn-default btn-lg">
                                 <span class="glyphicon glyphicon-envelope"></span>
                                 Contactar a Soporte</a>
