@@ -21,6 +21,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Error conexión</title>  
     </head>
+    
     <%@ page import= "java.sql.*" %>
     <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
         <jsp:setProperty name = "datosUsuario" property = "*"/>
@@ -57,7 +58,8 @@
             if (registros.absolute(1)) {
                 mensaje = "<script language='javascript'>alert('REGISTRADO');</script>";
                 out.println(mensaje);
-                response.sendRedirect("./Conectado_index.jsp");
+                datosUsuario.setUser(usuario);
+                response.sendRedirect("Conectado_index.jsp");
             } else {
                 mensaje = "<script language='javascript'>alert('NO REGISTRADO');</script>";
                 out.println(mensaje);

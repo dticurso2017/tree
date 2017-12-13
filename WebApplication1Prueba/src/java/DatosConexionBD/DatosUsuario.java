@@ -17,18 +17,20 @@ public class DatosUsuario implements Serializable {
     private String user = null;
     private String password = null;
     private String email = null;
-    private String Error = "";
+    private String ErrorRegistro = "Algo";
+    private String ErrorLogin = "Algo";
 
     public DatosUsuario() {
         super();
     }
 
-    public DatosUsuario(String user, String password, String email, String Error) {
+    public DatosUsuario(String user, String password, String email, String ErrorRegistro, String ErrorLogin) {
         super();
         this.user = user;
         this.password = password;
         this.email = email;
-        this.Error = Error;
+        this.ErrorRegistro = ErrorRegistro;
+        this.ErrorLogin = ErrorLogin;
     }
 
     public String getUser() {
@@ -43,8 +45,12 @@ public class DatosUsuario implements Serializable {
         return email;
     }
 
-    public String getError() {
-        return Error;
+    public String getErrorRegistro() {
+        return ErrorRegistro;
+    }
+
+    public String getErrorLogin() {
+        return ErrorLogin;
     }
 
     public void setUser(String user) {
@@ -59,17 +65,22 @@ public class DatosUsuario implements Serializable {
         this.email = email;
     }
 
-    public void setError(String Error) {
-        this.Error = Error;
+    public void setErrorRegistro(String ErrorRegistro) {
+        this.ErrorRegistro = ErrorRegistro;
+    }
+
+    public void setErrorLogin(String ErrorLogin) {
+        this.ErrorLogin = ErrorLogin;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 3;
         hash = 97 * hash + Objects.hashCode(this.user);
         hash = 97 * hash + Objects.hashCode(this.password);
         hash = 97 * hash + Objects.hashCode(this.email);
-        hash = 97 * hash + Objects.hashCode(this.Error);
+        hash = 97 * hash + Objects.hashCode(this.ErrorRegistro);
+        hash = 97 * hash + Objects.hashCode(this.ErrorLogin);
         return hash;
     }
 
@@ -94,7 +105,10 @@ public class DatosUsuario implements Serializable {
         if (!Objects.equals(this.email, other.email)) {
             return false;
         }
-        if (!Objects.equals(this.Error, other.Error)) {
+        if (!Objects.equals(this.ErrorRegistro, other.ErrorRegistro)) {
+            return false;
+        }
+        if (!Objects.equals(this.ErrorLogin, other.ErrorLogin)) {
             return false;
         }
         return true;

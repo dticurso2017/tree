@@ -34,7 +34,7 @@
             <ul class="dropdown-menu">
               <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
                 </jsp:useBean>
-              <li><a> <%=datosUsuario.getUser()%></a></li>
+              <li><a><%=datosUsuario.getUser()%></a></li>
               <li><a href="index.jsp">Sign Out  <span class="glyphicon glyphicon-log-out "></span></a></li>
             </ul>
           </li>

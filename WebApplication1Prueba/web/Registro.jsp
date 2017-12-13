@@ -27,14 +27,14 @@
 
         String url = "jdbc:mysql://10.0.0.110:3306/prueba";
         String user = "root";
-        String pass = "";
+        String pass = "root";
         Class.forName("com.mysql.jdbc.Driver");
         try {
             Connection myConn = DriverManager.getConnection(url, user, pass);
 
             if (usuario.equals("") || password.equals("") || email.equals("")) {
-                datosUsuario.setError("Los datos no pueden estar vacios");
-                response.sendRedirect("RegBBDD.jsp");
+                datosUsuario.setErrorRegistro("Los datos no pueden estar vacios");
+                response.sendRedirect("index.jsp");
             } else {
                 String myQueryInsert = "INSERT INTO usuarios (user, password, email) VALUES (?, ?, ?)";
                 java.sql.PreparedStatement miConsulta = myConn.prepareStatement(myQueryInsert);
@@ -42,13 +42,14 @@
                 miConsulta.setString(2, password);
                 miConsulta.setString(3, email);
                 miConsulta.executeUpdate();
-                datosUsuario.setError("");
+                datosUsuario.setErrorRegistro("");
+                datosUsuario.setUser(usuario);
                 response.sendRedirect("Conectado_index.jsp");
             }
         } catch (Exception e) {
-            datosUsuario.setError("Error de conexion a la Base de Datos");
+            datosUsuario.setErrorRegistro("Error de conexion a la Base de Datos");
             e.printStackTrace();
-            response.sendRedirect("RegBBDD.jsp");
+            response.sendRedirect("index.jsp");
         }
     %>
     <body>
