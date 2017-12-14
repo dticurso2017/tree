@@ -19,9 +19,9 @@
     <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
     </jsp:useBean>
     <%
-        String usuario = request.getParameter("user");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
+        String usuario = request.getParameter("user_register");
+        String password = request.getParameter("password_register");
+        String email = request.getParameter("email_register");
 
         String url = "jdbc:mysql://10.0.0.110:3306/prueba";
         String user = "root";

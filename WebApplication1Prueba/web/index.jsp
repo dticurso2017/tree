@@ -74,16 +74,20 @@
                                     <form id="register-form" action="Registro.jsp" method="GET" role="form" style="display: none;">
                                         <p class="error-details"><%=datosUsuario.getErrorRegistro()%></p>
                                         <div class="form-group">
-                                            <input type="text" name="user" id="username" tabindex="1" class="form-control" placeholder="Inserta un usuario" value="" required>
+                                            <input type="text" name="user_register" id="username" tabindex="1" class="form-control" placeholder="Inserta un usuario" value="" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Inserta e-mail" value="" required>
+                                            <input type="email" name="email_register" id="email" tabindex="1" class="form-control" placeholder="Inserta e-mail" value="" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Inserta una contraseña" required>
+                                            <input type="password" name="password_register" id="password_register" tabindex="2" class="form-control" placeholder="Inserta una contraseña" 
+                                                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                                                   title="Debe contener al menos un número, una letra mayúscula y una minúscula, y tener al menos 8 o más caracteres" 
+                                                   required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmación de la contraseña" required>
+                                            <input type="password" name="confirm_password_register" id="confirm_password_register" tabindex="2" class="form-control"
+                                                   placeholder="Ponga la contraseña otra vez" required>
                                         </div>
                                         <div class="form-group">
                                             <div class="row">

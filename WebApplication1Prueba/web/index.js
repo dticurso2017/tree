@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 $(function () {
     $('#login-form-link').click(function (e) {
         $("#login-form").delay(100).fadeIn(100);
@@ -18,5 +19,16 @@ $(function () {
         $(this).addClass('active register-active');
         e.preventDefault();
     });
-
+    
+    $("#register-submit").click(function () {
+        var password = $("#password_register").val();
+        var elemento_confirm_Password = document.getElementById("confirm_password_register");
+        var confirm_Password = elemento_confirm_Password.value;
+        
+        if(password === confirm_Password){
+            elemento_confirm_Password.setCustomValidity("");
+        } else {
+            elemento_confirm_Password.setCustomValidity("Las contraseñas no coinciden");
+        }
+    });
 });
