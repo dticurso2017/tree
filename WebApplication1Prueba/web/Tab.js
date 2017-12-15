@@ -1,11 +1,11 @@
 $(document).ready(function () {
  var tabID = 1;
-  var nextTab = $('#tab-list li').length + 1;
 
  $('.btn-add-tab').click(function () {
   tabID++;
   $('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">Tab ' + tabID + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
-  //$('#tab-content').append($('<div class="tab-pane fade" id="tab' + tabID + '">Tab ' + tabID + ' content</div>'));
+
+  //Contenido
   $('<div class="tab-pane" id="tab'+tabID+'">Tab' +tabID+' contenido</div>').appendTo('.tab-content');
 
  });
@@ -19,8 +19,6 @@ $(document).ready(function () {
   tabFirst.tab('show');
  });
 });
-
-
 
 
 
