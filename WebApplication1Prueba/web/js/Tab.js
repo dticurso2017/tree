@@ -3,7 +3,7 @@ $(document).ready(function () {
 
  $('.btn-add-tab').click(function () {
   tabID++;
-  $('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">Tab ' + tabID + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
+  $('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">Tab ' + tabID + '&nbsp' +'&nbsp' +'&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
 
   //Contenido
   $('<div class="tab-pane" id="tab'+tabID+'">Tab' +tabID+' contenido</div>').appendTo('.tab-content');

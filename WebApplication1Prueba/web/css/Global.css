@@ -1,16 +1,47 @@
 .icon-size{
   font-size: 30px;
 }
-.text-left-top{
-  text-align: initial;
+a,span{
+  color: black;
+  text-decoration: none;
+}
+lis,.list-group-item{
+  padding: 0px;
+}
+ul,li{
+  margin: 0%;
+  padding: 0%;
+}
+.list-group collapse {
+  margin:0%;
+  padding: 0%;
+}
+.list-group-item{
+  padding-top: 1%;
+  padding-bottom:  1%; 
+}
+.list-group-item>a{
+  padding-left: 2%;
+
 }
 .sidenav {
-  background-color: #f1f1f1;
   height: 100%;
-  border-radius: 10px;
+  padding-left: 2%;
 }
-.tab-pane{
-  width:  90%;
+.container-cabecera{
+  align-content: flex-end;
+  padding-right: 1.5%;
+}
+.nav-tabs {
+ margin-top: 1%;
+ width: 100%;
+}
+.navbar-right {
+ margin-right:0.5%;
+}
+.loggin-button {
+ margin-right: 10%;
+  margin-left: 5%;
 }
 @media screen and (max-width: 767px) {
   .sidenav {
@@ -18,25 +49,4 @@
     padding: 15px;
   }
   .row.content {height: auto;} 
-}
-.container-fluid-caja{
-  margin: 1%;
-}
-.content-caja{
-  margin: 1%;
-
-}
-.container-cabecera{
-  align-content: flex-end;
-  padding-right: 1.5%;
-}
-.nav-tabs {
- margin-top: -1.5%;
- width: 98%;
-}
-.navbar-right {
- margin-right:0.5%;
-}
-.loggin-button {
- margin-bottom: -27%;
 }
