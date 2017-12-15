@@ -9,10 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script language="javascript" type="text/javascript" src="js/jquery/jquery.js"></script>
-        <link rel="stylesheet" href="./tree.css" media="all" />
+        
+        <link href="css/tree.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="js/jquery/jquery.js" type="text/javascript"></script>
 
-        <title>JSP Page</title>
+        <title>Creador Tree</title>
     </head>
     <body>
         

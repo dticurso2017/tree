@@ -14,8 +14,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>  
+        <title>Error conexión</title>
     </head>
+    
     <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
     </jsp:useBean>
     <%
@@ -29,13 +30,13 @@
         Class.forName("com.mysql.jdbc.Driver");
         try {
             Connection myConn = DriverManager.getConnection(url, user, pass);
-            
+
             String myQuerySearch = "SELECT * FROM usuarios WHERE user = ? OR email = ?";
             java.sql.PreparedStatement miConsultaSearch = myConn.prepareStatement(myQuerySearch);
             miConsultaSearch.setString(1, usuario);
             miConsultaSearch.setString(2, email);
             ResultSet registros = miConsultaSearch.executeQuery();
-            
+
             if (registros.absolute(1)) {
                 datosUsuario.setErrorRegistro("El usuario ya existe, intenta crear otro usuario");
                 response.sendRedirect("index.jsp");
@@ -46,7 +47,7 @@
                 miConsultaInsert.setString(2, password);
                 miConsultaInsert.setString(3, email);
                 miConsultaInsert.executeUpdate();
-                
+
                 datosUsuario.setErrorLogin("");
                 datosUsuario.setErrorRegistro("");
                 datosUsuario.setUser(usuario);
