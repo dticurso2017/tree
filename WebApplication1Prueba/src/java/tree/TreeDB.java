@@ -32,12 +32,12 @@ public class TreeDB {
     private Statement stmt = null;  // Or PreparedStatement if needed
     private ResultSet rs = null;
     private static StringBuilder sb = null;
-    
-    SortedMap<String, Node> nodeMap;
+
+    private SortedMap<String, Node> nodeMap;
 
     public TreeDB() {
         sb = new StringBuilder();
-        
+
         try {
             Context initialContext = new InitialContext();
 
@@ -62,7 +62,6 @@ public class TreeDB {
     public static StringBuilder getSb() {
         return sb;
     }
-    
 
     public ResultSet getData() throws SQLException {
         String query = "SELECT node_f, node_id, node_text FROM stree_mn ORDER BY node_id";
@@ -76,26 +75,55 @@ public class TreeDB {
     public ArrayList<Node> createTreeNode(ResultSet rs) throws SQLException {
 
         nodeMap = new TreeMap<String, Node>();
-        while (rs.next()) {
-            String nodeFather = rs.getString("node_f");
+        try {
+            while (rs.next()) {
+                String nodeFather = rs.getString("node_f");
 
-            Node n = new Node(
-                    rs.getString("node_id"),
-                    rs.getString("node_text"),
-                    null
-            );
-            if (rs.getString("node_f").equals("0")) {
-                nodeMap.put(n.getNodeID(), n);
-            } else {
-                nodeMap.get(nodeFather).addChild(n);
-                nodeMap.put(n.getNodeID(), n);
+                Node n = new Node(
+                        rs.getString("node_id"),
+                        rs.getString("node_text"),
+                        null
+                );
+                if (rs.getString("node_f").equals("0")) {
+                    nodeMap.put(n.getNodeID(), n);
+                } else {
+                    nodeMap.get(nodeFather).addChild(n);
+                    nodeMap.put(n.getNodeID(), n);
+                }
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            // Close the result sets and statements,
+            // and the connection is returned to the pool
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {;
+                }
+                rs = null;
+            }
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {;
+                }
+                stmt = null;
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {;
+                }
+                conn = null;
             }
         }
         ArrayList<Node> nodeList = (ArrayList<Node>) nodeMap.get("/").getChilds();
-        
+
         return nodeList;
-    }   
-    public void printListjs(List<Node> l){
+    }
+
+    public void printListjs(List<Node> l) {
         if (l == null || l.isEmpty()) {
             return;
         }
@@ -103,21 +131,25 @@ public class TreeDB {
         for (Node n : l) {
             printNodejs(n);
             sb.append("}");
-            if(l.indexOf(n) != l.size()-1) sb.append(",");
+            if (l.indexOf(n) != l.size() - 1) {
+                sb.append(",");
+            }
         }
         sb.append("]");
     }
-     private void printNodejs(Node n) {
+
+    private void printNodejs(Node n) {
         sb.append("{'text': '").append(n.getNodeText()).append("'");
-        
-        if (!n.getChilds().isEmpty()){
+
+        if (!n.getChilds().isEmpty()) {
             sb.append(", 'nodes': ");
             printListjs(n.getChilds());
             sb.append("");
         }
-        
+
     }
 
+    /*
     public void printList(List<Node> l) {
         if (l == null || l.size() == 0) {
             return;
@@ -136,8 +168,5 @@ public class TreeDB {
         printList(n.getChilds());
         sb.append("</li>");
     }
-    
-    
-
-  
+     */
 }
