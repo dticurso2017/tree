@@ -4,11 +4,11 @@
     Author     : salademo
 --%>
 
+<%@page import="javax.sql.*"%>
+<%@page import="javax.naming.*"%>
 <%@page import="javax.swing.JOptionPane"%>
-<%@page import="java.sql.ResultSet"%>
 <%@page import="java.beans.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.DriverManager"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,22 +25,27 @@
         String usuario = request.getParameter("user");
         String password = request.getParameter("password");
 
-        String url = "jdbc:mysql://10.0.0.110:3306/prueba";
-        String user = "root";
-        String pass = "root";
-        Class.forName("com.mysql.jdbc.Driver");
+        Context initialContext = new InitialContext();
 
+        Context environmentContext = (Context) initialContext.lookup("java:comp/env");
+
+        DataSource dataSource = (DataSource) environmentContext.lookup("jdbc/TestDB");
+
+        Connection conn = null;
+        ResultSet register = null;
+        PreparedStatement myQuery = null;
         try {
-            Connection myConn = DriverManager.getConnection(url, user, pass);
 
-            String myQuery = "SELECT * FROM usuarios WHERE user = ? AND password = ?";
+            conn = dataSource.getConnection();
 
-            java.sql.PreparedStatement miConsulta = myConn.prepareStatement(myQuery);
-            miConsulta.setString(1, usuario);
-            miConsulta.setString(2, password);
+            String myQueryStr = "SELECT * FROM d_users WHERE user = ? AND password = ?";
 
-            ResultSet registros = miConsulta.executeQuery();
-            if (registros.absolute(1)) {
+            myQuery = conn.prepareStatement(myQueryStr);
+            myQuery.setString(1, usuario);
+            myQuery.setString(2, password);
+
+            register = myQuery.executeQuery();
+            if (register.absolute(1)) {
                 datosUsuario.setErrorLogin("");
                 datosUsuario.setErrorRegistro("");
                 datosUsuario.setUser(usuario);
@@ -54,6 +59,30 @@
             datosUsuario.setErrorLogin("Error de conexion a la Base de Datos");
             e.printStackTrace();
             response.sendRedirect("index.jsp");
+        } finally {
+            // Close the result sets and statements,
+            // and the connection is returned to the pool
+            if (register != null) {
+                try {
+                    register.close();
+                } catch (SQLException e) {;
+                }
+                register = null;
+            }
+            if (myQuery != null) {
+                try {
+                    myQuery.close();
+                } catch (SQLException e) {;
+                }
+                myQuery = null;
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {;
+                }
+                conn = null;
+            }
         }
 
     %>

@@ -3,12 +3,12 @@
     Created on : 11-dic-2017, 9:06:23
     Author     : User
 --%>
-<%@page import="java.text.*"%>
-<%@page import="javax.lang.model.element.*"%>
-<%@page import="javax.swing.text.*"%>
+<%@page import="java.sql.*"%>
+<%@page import="javax.sql.*"%>
+<%@page import="javax.naming.*"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="java.beans.Statement"%>
-<%@page import="java.sql.*"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Error conexión</title>
     </head>
-    
+
     <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
     </jsp:useBean>
     <%
@@ -24,29 +24,36 @@
         String password = request.getParameter("password_register");
         String email = request.getParameter("email_register");
 
-        String url = "jdbc:mysql://10.0.0.110:3306/prueba";
-        String user = "root";
-        String pass = "root";
-        Class.forName("com.mysql.jdbc.Driver");
+        Context initialContext = new InitialContext();
+
+        Context environmentContext = (Context) initialContext.lookup("java:comp/env");
+
+        DataSource dataSource = (DataSource) environmentContext.lookup("jdbc/TestDB");
+
+        Connection conn = null;
+        ResultSet register = null;
+        PreparedStatement myQuerySearch = null;
+        PreparedStatement myQueryInsert = null;
+
         try {
-            Connection myConn = DriverManager.getConnection(url, user, pass);
+            conn = dataSource.getConnection();
 
-            String myQuerySearch = "SELECT * FROM usuarios WHERE user = ? OR email = ?";
-            java.sql.PreparedStatement miConsultaSearch = myConn.prepareStatement(myQuerySearch);
-            miConsultaSearch.setString(1, usuario);
-            miConsultaSearch.setString(2, email);
-            ResultSet registros = miConsultaSearch.executeQuery();
+            String myQuerySearchStr = "SELECT * FROM usuarios WHERE user = ? OR email = ?";
+            myQuerySearch = conn.prepareStatement(myQuerySearchStr);
+            myQuerySearch.setString(1, usuario);
+            myQuerySearch.setString(2, email);
+            register = myQuerySearch.executeQuery();
 
-            if (registros.absolute(1)) {
+            if (register.absolute(1)) {
                 datosUsuario.setErrorRegistro("El usuario ya existe, intenta crear otro usuario");
                 response.sendRedirect("index.jsp");
             } else {
-                String myQueryInsert = "INSERT INTO usuarios (user, password, email) VALUES (?, ?, ?)";
-                java.sql.PreparedStatement miConsultaInsert = myConn.prepareStatement(myQueryInsert);
-                miConsultaInsert.setString(1, usuario);
-                miConsultaInsert.setString(2, password);
-                miConsultaInsert.setString(3, email);
-                miConsultaInsert.executeUpdate();
+                String myQueryInsertStr = "INSERT INTO usuarios (user, password, email) VALUES (?, ?, ?)";
+                myQueryInsert = conn.prepareStatement(myQueryInsertStr);
+                myQueryInsert.setString(1, usuario);
+                myQueryInsert.setString(2, password);
+                myQueryInsert.setString(3, email);
+                myQueryInsert.executeUpdate();
 
                 datosUsuario.setErrorLogin("");
                 datosUsuario.setErrorRegistro("");
@@ -57,6 +64,37 @@
             datosUsuario.setErrorRegistro("Error de conexion a la Base de Datos");
             e.printStackTrace();
             response.sendRedirect("index.jsp");
+        } finally {
+            // Close the result sets and statements,
+            // and the connection is returned to the pool
+            if (register != null) {
+                try {
+                    register.close();
+                } catch (SQLException e) {;
+                }
+                register = null;
+            }
+            if (myQuerySearch != null) {
+                try {
+                    myQuerySearch.close();
+                } catch (SQLException e) {;
+                }
+                myQuerySearch = null;
+            }
+            if (myQueryInsert != null) {
+                try {
+                    myQueryInsert.close();
+                } catch (SQLException e) {;
+                }
+                myQueryInsert = null;
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {;
+                }
+                conn = null;
+            }
         }
     %>
     <body>
