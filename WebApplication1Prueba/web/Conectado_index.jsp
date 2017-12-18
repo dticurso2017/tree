@@ -62,33 +62,6 @@
             </div>
             <div class="row content">
                 <div id="tree" class="col-sm-3 sidenav">
-                    <!--  <div class="panel panel-default">
-                          <div class="panel-heading" style="background-color:#333333;">
-                              <div class="panel-title">
-                                  <a data-toggle="collapse" href="#Child1"  >
-                                      <span>ROOT / </span>
-                                  </a>
-                              </div>
-                          </div>
-                          <ul class="list-group collapse" id="Child1">
-                              <li class="list-group-item Child1" style="background-color:#666666;">
-                                  <a data-toggle="collapse" href="#Child1_1">
-                                      Child1
-                                  </a>
-                                  <ul id="Child1_1" class="collapse " >
-                                      <li class="list-group-item  btn-add-tab" style="background-color:#cccccc;">
-                                          <a>Child1_1</a>
-                                      </li>
-                                      <li class="list-group-item  btn-add-tab">
-                                          <a>Child1_2</a>
-                                      </li>
-                                      <li class="list-group-item btn-add-tab">
-                                          <a>Child1_3</a>
-                                      </li>
-                                  </ul>
-                              </li>
-                          </ul>
-                      </div> -->
                 </div>
                 <div class="col-sm-6">
                     <h4>APP</h4>

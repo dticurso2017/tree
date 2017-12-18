@@ -148,25 +148,4 @@ public class TreeDB {
         }
 
     }
-
-    /*
-    public void printList(List<Node> l) {
-        if (l == null || l.size() == 0) {
-            return;
-        }
-        sb.append("<ul>");
-        for (Node n : l) {
-            printNode(n);
-        }
-        sb.append("</ul>");
-    }
-
-    private void printNode(Node n) {
-        sb.append("<li>").append(n.getNodeText()).append("</li>");
-
-        sb.append("<li>");
-        printList(n.getChilds());
-        sb.append("</li>");
-    }
-     */
 }
