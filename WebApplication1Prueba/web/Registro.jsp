@@ -37,7 +37,7 @@
         try {
             conn = dataSource.getConnection();
 
-            String myQuerySearchStr = "SELECT * FROM usuarios WHERE user = ? OR email = ?";
+            String myQuerySearchStr = "SELECT * FROM d_users WHERE user = ? OR email = ?";
             myQuery = conn.prepareStatement(myQuerySearchStr);
             myQuery.setString(1, usuario);
             myQuery.setString(2, email);
@@ -47,7 +47,7 @@
                 datosUsuario.setErrorRegistro("El usuario ya existe, intenta crear otro usuario");
                 response.sendRedirect("index.jsp");
             } else {
-                String myQueryInsertStr = "INSERT INTO usuarios (user, password, email) VALUES (?, ?, ?)";
+                String myQueryInsertStr = "INSERT INTO d_users (user, password, email) VALUES (?, ?, ?)";
                 myQuery = conn.prepareStatement(myQueryInsertStr);
                 myQuery.setString(1, usuario);
                 myQuery.setString(2, password);
