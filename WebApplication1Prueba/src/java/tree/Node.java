@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author NitroPc
+ * @author Arnau
  */
 public class Node {
     
@@ -39,8 +39,7 @@ public class Node {
     
     public List<Node> getChilds() {
         return childs;
-    }   
-    
+    }       
     
     public void addChild(Node c){
         this.childs.add(c);

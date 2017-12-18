@@ -33,9 +33,7 @@
     <body>
         <%
             TreeDB tree = new TreeDB();
-            ResultSet rs = tree.getData();
-            ArrayList<Node> listNode = tree.createTreeNode(rs);
-            tree.printListjs(listNode);
+            tree.buildTree();
         %>
         <div class="container-fluid">
             <div class="navbar navbar-defauld">
@@ -75,7 +73,7 @@
             //data to create the menu in treeview
             function getTree() {
                 //data from db 
-                var data = <%= TreeDB.getSb()%>;
+                var data = <%= TreeDB.getTreeString()%>;
 
                 return data;
             }
