@@ -32,28 +32,27 @@
 
         Connection conn = null;
         ResultSet register = null;
-        PreparedStatement myQuerySearch = null;
-        PreparedStatement myQueryInsert = null;
+        PreparedStatement myQuery = null;
 
         try {
             conn = dataSource.getConnection();
 
             String myQuerySearchStr = "SELECT * FROM usuarios WHERE user = ? OR email = ?";
-            myQuerySearch = conn.prepareStatement(myQuerySearchStr);
-            myQuerySearch.setString(1, usuario);
-            myQuerySearch.setString(2, email);
-            register = myQuerySearch.executeQuery();
+            myQuery = conn.prepareStatement(myQuerySearchStr);
+            myQuery.setString(1, usuario);
+            myQuery.setString(2, email);
+            register = myQuery.executeQuery();
 
             if (register.absolute(1)) {
                 datosUsuario.setErrorRegistro("El usuario ya existe, intenta crear otro usuario");
                 response.sendRedirect("index.jsp");
             } else {
                 String myQueryInsertStr = "INSERT INTO usuarios (user, password, email) VALUES (?, ?, ?)";
-                myQueryInsert = conn.prepareStatement(myQueryInsertStr);
-                myQueryInsert.setString(1, usuario);
-                myQueryInsert.setString(2, password);
-                myQueryInsert.setString(3, email);
-                myQueryInsert.executeUpdate();
+                myQuery = conn.prepareStatement(myQueryInsertStr);
+                myQuery.setString(1, usuario);
+                myQuery.setString(2, password);
+                myQuery.setString(3, email);
+                myQuery.executeUpdate();
 
                 datosUsuario.setErrorLogin("");
                 datosUsuario.setErrorRegistro("");
@@ -74,19 +73,12 @@
                 }
                 register = null;
             }
-            if (myQuerySearch != null) {
+            if (myQuery != null) {
                 try {
-                    myQuerySearch.close();
+                    myQuery.close();
                 } catch (SQLException e) {;
                 }
-                myQuerySearch = null;
-            }
-            if (myQueryInsert != null) {
-                try {
-                    myQueryInsert.close();
-                } catch (SQLException e) {;
-                }
-                myQueryInsert = null;
+                myQuery = null;
             }
             if (conn != null) {
                 try {
