@@ -79,10 +79,10 @@
                                     <form id="register-form" action="Registro.jsp" method="GET" role="form" style="display: none;">
                                         <p class="error-details"><%=datosUsuario.getErrorRegistro()%></p>
                                         <div class="form-group">
-                                            <input type="text" name="user_register" id="username" tabindex="1" class="form-control" placeholder="Inserta un usuario" value="" required>
+                                            <input type="text" name="user_register" id="user_register" tabindex="1" class="form-control" placeholder="Inserta un usuario" value="" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email_register" id="email" tabindex="1" class="form-control" placeholder="Inserta e-mail" value="" required>
+                                            <input type="email" name="email_register" id="email_register" tabindex="1" class="form-control" placeholder="Inserta e-mail" value="" required>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="password_register" id="password_register" tabindex="2" class="form-control" placeholder="Inserta una contraseña" 
