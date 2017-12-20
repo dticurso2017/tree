@@ -3,6 +3,6 @@
 
 <Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource"
 		maxActive="100" maxIdle="30" maxWait="10000" 
-		username="root" password="root" driverClassName="com.mysql.jdbc.Driver" 
+		username="DAF" password="DTI" driverClassName="com.mysql.jdbc.Driver" 
 		url="jdbc:mysql://213.27.250.4:48340/test" />
 </Context>
