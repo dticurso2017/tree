@@ -43,7 +43,7 @@
     <ul class="nav navbar-nav navbar-right">
      <li class="dropdown loggin-button">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-       <span class="glyphicon glyphicon-th-list icon-size"></span>
+       <span class="glyphicon glyphicon glyphicon-user icon-size"></span>
       </a>
       <ul class="dropdown-menu">
        <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
