@@ -83,15 +83,6 @@
     </div>
     <div class="clearfix"></div>
    </div>
-   <div class="row content">
-
-    <!--<div class="col-sm-6">
-     <h4>APP</h4>
-     <div class="tab-content">
-      <div class="tab-pane active" id="tab1">HOME</div>
-     </div>
-    </div>-->
-   </div>
   </div>
   <script>
    //data to create the menu in treeview
