@@ -49,7 +49,7 @@
                 <div class="w3-container">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="loggin-button">
-                            <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">
+                            <button class="w3-button w3-teal w3-xlarge w3-hide-large pull-left" onclick="w3_open()">
                                 <li><span class="glyphicon glyphicon-menu-hamburger "></span></li>
                             </button>
                             <button class="w3-button w3-teal w3-xlarge dropdown-toggle pull-right" data-toggle="dropdown">
