@@ -69,11 +69,13 @@
         <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
           <li class="active"><a href="#tab1" role="tab" data-toggle="tab">Home</a></li>
         </ul>
+        <div class="tree sm-mb" >
+        </div>
       </div>              
       <div class="w3-container">
         <div class="tab-content">
           <div class="tab-pane active" id="tab1">
-            <div id="tree" class="col-lg-12">
+            <div class="tree sxl-mb" >
             </div>
           </div>
         </div>
@@ -98,12 +100,12 @@
       var tabID = 1;  //tab id
 
       //create the menu
-      $('#tree').treeview({data: getTree(),
+      $('.tree').treeview({data: getTree(),
         enableLinks: true,
         levels: 1,
         showTags: true});
       //on node selected
-      /**/ $('#tree').on('nodeSelected', function (e, node) {
+      /**/ $('.tree').on('nodeSelected', function (e, node) {
         if (typeof node['nodes'] == "undefined") {
 
           //new tab

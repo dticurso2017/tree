@@ -3,7 +3,7 @@
    ------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
     body{
-        font-size: 200%;
+        font-size: 150%;
     }
     .dropdown-item{
         font-size: 150%;
@@ -15,10 +15,16 @@
         font-size: 300%;
     }
     .w3-sidebar{
-        width: 75%;  
+        width: 40%;  
     } 
     .w3-container{
         margin-left: 0%;
+    }
+    .sm-mb{
+      display: block;
+    }
+    .sxl-mb{
+      display: none;
     }
 }
 /* Tablets en horizonal y escritorios normales
@@ -31,10 +37,16 @@
         font-size: 150%; 
     }
     .w3-sidebar{
-        width: 75%;  
+        width: 18%;  
     } 
     .w3-container{
         margin-left: 200px;
+    }
+    .sxl-mb{
+      display: block;
+    }
+    .sm-mb{
+      display: none;
     }
 }
 /* Escritorios muy anchos
@@ -52,6 +64,13 @@
     .w3-container{
         margin-left: 200px;
     }
+    .sxl-mb{
+      display: block;
+    }
+    .sm-mb{
+      display: none;
+    }
+    
 }
 
 .glyphicon-plus, .glyphicon-minus,.glyphicon-log-out{
