@@ -49,6 +49,7 @@
                             <button class="w3-button w3-teal w3-xlarge w3-hide-large pull-left" onclick="w3_open()">
                                 <li><span class="glyphicon glyphicon-menu-hamburger "></span></li>
                             </button>
+                            <button name="data" class="w3-button w3-teal w3-xlarge pull-left" type="button" onclick="getHome()">Click</button>
                             <div class="btn-group pull-right">
                                 <button class="w3-button w3-teal w3-xlarge dropdown-toggle pull-right" data-toggle="dropdown">
                                     <span class="glyphicon glyphicon-user"></span>
@@ -68,8 +69,8 @@
             <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" id="mySidebar" onsubmit="return false">
                 <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
                 <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
-                    <button name="data" type="button" onclick="getHome()">Click</button>
-                    <li class="active"><a href="#tab1" role="tab" data-toggle="tab">Home</a></li>
+                    
+                    <li class="tabclass active" id="taborigin1"><a href="#tab1" role="tab" data-toggle="tab">Home</a></li>
                 </ul>
             </div>              
             <div class="w3-container">
@@ -92,7 +93,18 @@
                 document.getElementById("mySidebar").style.display = "none";
             }
             function getHome() {
-                $('#tab1')
+                for(var i = 1, elements = document.getElementsByClassName("tabclass"); i <= elements.length; i++){
+                    var ID = "taborigin"+i;
+                    document.getElementById(ID).className = "tabclass";
+                }
+                
+                for(var i = 1, elements = document.getElementsByClassName("tab-pane"); i <= elements.length; i++){
+                    var ID = "tab"+i;
+                    document.getElementById(ID).className = "tab-pane";
+                }
+                
+                document.getElementById("tab1").className = "tab-pane active";
+                       
             }
         </script>
         <script>
@@ -116,7 +128,7 @@
 
                     //new tab
                     tabID++;
-                    $('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
+                    $('#tab-list').append($('<li class="tabclass" id="taborigin' + tabID + '"><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
 
                     //Content panel of the new tab
                     $('<div class="tab-pane" id="tab' + tabID + '">' + node.text + '</div>').appendTo('.tab-content');
