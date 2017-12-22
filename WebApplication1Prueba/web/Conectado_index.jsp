@@ -14,7 +14,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <link rel="shortcut icon" href="favicon.ico" />
-    
+
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="css/file-explore.css" rel="stylesheet" type="text/css">
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -22,7 +22,7 @@
     <link href="css/w3.css" rel="stylesheet" type="text/css"/>
     <link href="css/DefauldStyles.css" rel="stylesheet" type="text/css"/>
     <link href="css/MobileStyles.css" rel="stylesheet" type="text/css"/>
-    
+
     <!-- script -->
     <script src="js/jquery/jquery.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
@@ -38,13 +38,9 @@
       TreeDB tree = new TreeDB();
       tree.buildTree();
     %>
-    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
-      <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
-      <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
-        <li class="active"><a href="#tab1" role="tab" data-toggle="tab">Home</a></li>
-      </ul>
-    </div>
-    <div class="w3-main" style="margin-left:200px">
+
+
+    <div class="w3-main">
       <div class="w3-teal">
         <div class="w3-container">
           <div class="nav">
@@ -68,10 +64,16 @@
         </div>
       </div>
 
+      <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
+          <li class="active"><a href="#tab1" role="tab" data-toggle="tab">Home</a></li>
+        </ul>
+      </div>              
       <div class="w3-container">
         <div class="tab-content">
           <div class="tab-pane active" id="tab1">
-            <div id="tree" class="">
+            <div id="tree" class="col-lg-12">
             </div>
           </div>
         </div>
@@ -106,7 +108,7 @@
 
           //new tab
           tabID++;
-          $('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + ' <button class="close" type="button" title="Remove this page">×</button></a></li>'));
+          $('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
 
           //Content panel of the new tab
           $('<div class="tab-pane" id="tab' + tabID + '">' + node.text + '</div>').appendTo('.tab-content');

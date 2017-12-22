@@ -15,10 +15,10 @@
         font-size: 300%;
     }
     .w3-sidebar{
-        width: 200px;  
+        width: 75%;  
     } 
     .w3-container{
-        margin-left: 0px;
+        margin-left: 0%;
     }
 }
 /* Tablets en horizonal y escritorios normales
@@ -31,7 +31,7 @@
         font-size: 150%; 
     }
     .w3-sidebar{
-        width: 200px;  
+        width: 75%;  
     } 
     .w3-container{
         margin-left: 200px;
@@ -47,7 +47,7 @@
         font-size: 100%; 
     }
     .w3-sidebar{
-        width: 200px;  
+        width: 15%;  
     } 
     .w3-container{
         margin-left: 200px;
