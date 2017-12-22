@@ -48,7 +48,7 @@
       <div class="w3-teal">
         <div class="w3-container">
           <div class="nav">
-            <li class="loggin-button">
+            <li>
               <button class="w3-button w3-teal w3-xlarge w3-hide-large pull-left" onclick="w3_open()">
                 <li><span class="glyphicon glyphicon-menu-hamburger "></span></li>
               </button>
@@ -106,7 +106,7 @@
 
           //new tab
           tabID++;
-          $('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
+          $('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + ' <button class="close" type="button" title="Remove this page">×</button></a></li>'));
 
           //Content panel of the new tab
           $('<div class="tab-pane" id="tab' + tabID + '">' + node.text + '</div>').appendTo('.tab-content');

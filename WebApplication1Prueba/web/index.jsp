@@ -14,7 +14,8 @@
   <link href="css/DefauldStyles.css" rel="stylesheet" type="text/css"/>
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
   <link href="css/index.css" rel="stylesheet" type="text/css"/>
-
+  <link href="css/MobileStyles.css" rel="stylesheet" type="text/css"/>
+  
   <script src="js/jquery/jquery.min.js" type="text/javascript"></script>
   <script src="js/bootstrap.min.js" type="text/javascript"></script>
   <script src="js/index.js" type="text/javascript"></script>

@@ -6,6 +6,9 @@
 body{
   font-family: 'Nunito', 'Nunito Sans', sans-serif;
 }
+.close{
+ color:#000!important;
+}
 h1{
   text-transform: capitalize;
 }
@@ -25,10 +28,10 @@ a,span{
   color: #337ab7;
 }
 .w3-sidebar{
-  background-color: lightgray!important;
+  background-color: #e6e5e5;
 }
 .w3-teal{
-  background-color: lightgray;
+  background-color: #e6e5e5;
 }
 .tab-list{
   border: none;
@@ -45,10 +48,7 @@ a,span{
 }
 .userIcon{
   padding: 4%;
-}.icon-size{
-  font-size: 150%;
 }
-
 lis,.list-group-item{
   padding: 0px;
 }
