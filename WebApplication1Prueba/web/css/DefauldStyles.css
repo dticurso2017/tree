@@ -9,6 +9,15 @@ body{
 h1{
   text-transform: capitalize;
 }
+p{
+  margin: 5%;
+}
+a{
+  text-decoration: none;
+}
+a,span{
+  text-decoration: none;
+}
 .glyphicon-user{
   color:#337ab7 ;
 }
@@ -24,12 +33,7 @@ h1{
 .tab-list{
   border: none;
 }
-p{
-  margin: 5%;
-}
-a{
-  text-decoration: none;
-}
+
 .node-tree{
   background-color: #fff;
 }
@@ -44,9 +48,7 @@ a{
 }.icon-size{
   font-size: 150%;
 }
-a,span{
-  text-decoration: none;
-}
+
 lis,.list-group-item{
   padding: 0px;
 }
@@ -84,11 +86,4 @@ lis,.list-group-item{
   margin-right: 10%;
   margin-left: 5%;
 }
-/*@media screen and (max-width: 400px) {
-  .sidenav {
-    height: auto;
-    padding: 15px;
-  }
-  .row.content {height: auto;} 
-}*/
 

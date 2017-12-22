@@ -1,0 +1,33 @@
+
+/* Móviles en horizontal o tablets en vertical
+   ------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  body{
+    font-size: 120%;
+    
+  }
+  .glyphicon{
+    font-size: 180%;
+  }
+  .w3-xlarge{
+    font-size: 100%; 
+  }
+}
+
+/* Tablets en horizonal y escritorios normales
+   ------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+ body{
+    font-size: 100%;
+    
+  }
+}
+
+/* Escritorios muy anchos
+   ------------------------------------------------------------------------- */
+@media (min-width: 1200px) { 
+ body{
+    font-size: 100%;
+ }
+}
+
