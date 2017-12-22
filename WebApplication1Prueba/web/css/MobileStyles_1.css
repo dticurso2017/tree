@@ -1,18 +1,16 @@
 
 /* Móviles en horizontal o tablets en vertical
    ------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     body{
-        font-size: 200%;
-    }
-    .dropdown-item{
-        font-size: 150%;
-    }
-    .close{
-        font-size: 150%;
+        font-size: 120%;
+
     }
     .glyphicon{
-        font-size: 300%;
+        font-size: 180%;
+    }
+    .w3-xlarge{
+        font-size: 100%; 
     }
     .w3-sidebar{
         width: 200px;  
@@ -21,14 +19,13 @@
         margin-left: 0px;
     }
 }
+
 /* Tablets en horizonal y escritorios normales
    ------------------------------------------------------------------------- */
 @media (min-width: 1024px) {
     body{
-        font-size: 150%;
-    }
-    .glyphicon{
-        font-size: 150%; 
+        font-size: 100%;
+
     }
     .w3-sidebar{
         width: 200px;  
@@ -37,13 +34,11 @@
         margin-left: 200px;
     }
 }
+
 /* Escritorios muy anchos
    ------------------------------------------------------------------------- */
 @media (min-width: 1200px) { 
     body{
-        font-size: 100%;
-    }
-    .glyphicon{
         font-size: 100%;
     }
     .w3-sidebar{
@@ -54,6 +49,3 @@
     }
 }
 
-.glyphicon-plus, .glyphicon-minus,.glyphicon-log-out{
-    font-size: 100%;
-}
