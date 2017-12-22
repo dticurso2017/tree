@@ -36,7 +36,9 @@ a,span{
 .tab-list{
   border: none;
 }
-
+#tree{
+  margin-left: 2%;  
+}
 .node-tree{
   background-color: #fff;
 }
