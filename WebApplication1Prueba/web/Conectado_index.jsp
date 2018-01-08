@@ -48,6 +48,10 @@
               <button class="w3-button w3-teal w3-xlarge w3-hide-large pull-left" onclick="w3_open()">
                 <li><span class="glyphicon glyphicon-menu-hamburger "></span></li>
               </button>
+                            <button name="data" class="w3-button w3-teal w3-xlarge pull-left" type="button" onclick="getHome()">
+                                <span class="glyphicon glyphicon-home">   
+                                </span>
+                            </button>
               <div class="btn-group pull-right">
                 <button class="w3-button w3-teal w3-xlarge dropdown-toggle pull-right" data-toggle="dropdown">
                   <span class="glyphicon glyphicon-user"></span>
@@ -88,6 +92,20 @@
       function w3_close() {
         document.getElementById("mySidebar").style.display = "none";
       }
+            function getHome() {
+                for(var i = 1, elements = document.getElementsByClassName("tabclass"); i <= elements.length; i++){
+                    var ID = "taborigin"+i;
+                    document.getElementById(ID).className = "tabclass";
+                }
+                
+                for(var i = 1, elements = document.getElementsByClassName("tab-pane"); i <= elements.length; i++){
+                    var ID = "tab"+i;
+                    document.getElementById(ID).className = "tab-pane";
+                }
+                
+                document.getElementById("tab1").className = "tab-pane active";
+                       
+            }
     </script>
     <script>
       //data to create the menu in treeview
