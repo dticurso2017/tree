@@ -1,9 +1,12 @@
 
 /* Móviles en horizontal o tablets en vertical
    ------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
+@media (max-width: 500px) {
     body{
-        font-size: 150%;
+        size: 500px;
+    }
+    .list-group-item{
+        background-color: #000;
     }
     .dropdown-item{
         font-size: 150%;
@@ -12,60 +15,60 @@
         font-size: 150%;
     }
     .glyphicon{
-        font-size: 300%;
+        font-size: 200%;
     }
     .w3-sidebar{
-        width: 40%;  
+        width: 70%;  
     } 
-    .w3-container{
-        margin-left: 0%;
+    #casa{
+        display: none;
     }
     .sm-mb{
       display: block;
+      color:white;
     }
     .sxl-mb{
       display: none;
     }
+    
 }
 /* Tablets en horizonal y escritorios normales
    ------------------------------------------------------------------------- */
 @media (min-width: 1024px) {
-    body{
-        font-size: 150%;
-    }
-    .glyphicon{
-        font-size: 150%; 
-    }
-    .w3-sidebar{
-        width: 18%;  
-    } 
-    .w3-container{
-        margin-left: 200px;
-    }
-    .sxl-mb{
-      display: block;
-    }
-    .sm-mb{
-      display: none;
-    }
-}
-/* Escritorios muy anchos
-   ------------------------------------------------------------------------- */
-@media (min-width: 1200px) { 
-    body{
-        font-size: 100%;
-    }
+    
     .glyphicon{
         font-size: 100%; 
     }
     .w3-sidebar{
         width: 15%;  
     } 
-    .w3-container{
-        margin-left: 200px;
+    .contenido{
+        padding-left: 18%;
     }
     .sxl-mb{
       display: block;
+    }
+    .sm-mb{
+      display: none;
+    }
+    
+}
+/* Escritorios muy anchos
+   ------------------------------------------------------------------------- */
+@media (min-width: 1200px) { 
+    
+    .glyphicon{
+        font-size: 100%; 
+    }
+    .w3-sidebar{
+        width: 15%;  
+    } 
+    .contenido{
+        padding-left: 18%;
+    }
+    .sxl-mb{
+      display: block;
+      
     }
     .sm-mb{
       display: none;
