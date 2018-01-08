@@ -73,12 +73,12 @@
                 <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
                 <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
                     
-                    <li class="tabclass active" id="taborigin1"><a href="#tab1" role="tab" data-toggle="tab">Home</a></li>
+                    <li class="tabclass active" id="hometab"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
                 </ul>
             </div>              
             <div class="w3-container">
                 <div class="tab-content">
-                    <div class="tab-pane active" id="tab1">
+                    <div class="tab-pane active" id="home">
                         <div id="tree" class="col-lg-12">
                         </div>
                     </div>
@@ -89,24 +89,16 @@
 
 
         <script>
-            function w3_open() {
+            function w3_open() {                
                 document.getElementById("mySidebar").style.display = "block";
             }
             function w3_close() {
                 document.getElementById("mySidebar").style.display = "none";
             }
             function getHome() {
-                for(var i = 1, elements = document.getElementsByClassName("tabclass"); i <= elements.length; i++){
-                    var ID = "taborigin"+i;
-                    document.getElementById(ID).className = "tabclass";
-                }
-                
-                for(var i = 1, elements = document.getElementsByClassName("tab-pane"); i <= elements.length; i++){
-                    var ID = "tab"+i;
-                    document.getElementById(ID).className = "tab-pane";
-                }
-                
-                document.getElementById("tab1").className = "tab-pane active";
+               $(".tabclass.active").removeClass('active');
+               $(".tab-pane.active").removeClass('active');
+                document.getElementById("home").className = "tab-pane active";
                        
             }
         </script>
@@ -118,7 +110,7 @@
 
                 return data;
             }
-            var tabID = 1;  //tab id
+            var tabID = 0;  //tab id
 
             //create the menu
             $('#tree').treeview({data: getTree(),
@@ -128,10 +120,10 @@
             //on node selected
             /**/ $('#tree').on('nodeSelected', function (e, node) {
                 if (typeof node['nodes'] == "undefined") {
-
+                    
                     //new tab
                     tabID++;
-                    $('#tab-list').append($('<li class="tabclass" id="taborigin' + tabID + '"><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
+                    $('#tab-list').append($('<li class="tabclass"><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
 
                     //Content panel of the new tab
                     $('<div class="tab-pane" id="tab' + tabID + '">' + node.text + '</div>').appendTo('.tab-content');
