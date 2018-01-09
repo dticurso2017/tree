@@ -68,18 +68,16 @@
                 </div>
             </div>
 
-            <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" id="mySidebar">
-                <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+            <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" id="mySidebar" onsubmit="return false">
+                <div id="tree1" class="tree sm-mb" ></div>
                 <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
-                    <li class="active"><a id="taborigin1" href="#tab1" role="tab" data-toggle="tab">Home</a></li>
+                    <li class="tabclass active" id="hometab"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
                 </ul>
-                <div class="tree sm-mb" >
-                </div>
             </div>              
-            <div class="w3-container contenido">
-                <div class="tab-content">
-                    <div class="tab-pane active" id="tab1">
-                        <div class="tree sxl-mb" >
+            <div class="w3-container ">
+                <div class="tab-content contenido">
+                    <div class="tab-pane active" id="home">
+                        <div id="tree2" class="tree sxl-mb" >
                         </div>
                     </div>
                 </div>
@@ -90,17 +88,9 @@
                 $("#mySidebar").toggle();
             }
             function getHome() {
-                for (var i = 1, elements = document.getElementsByClassName("tabclass"); i <= elements.length; i++) {
-                    var ID = "taborigin" + i;
-                    document.getElementById(ID).className = "tabclass";
-                }
-
-                for (var i = 1, elements = document.getElementsByClassName("tab-pane"); i <= elements.length; i++) {
-                    var ID = "tab" + i;
-                    document.getElementById(ID).className = "tab-pane";
-                }
-
-                document.getElementById("tab1").className = "tab-pane active";
+                $(".tabclass.active").removeClass('active');
+                $(".tab-pane.active").removeClass('active');
+                document.getElementById("home").className = "tab-pane active";
             }
         </script>
         <script>
@@ -110,20 +100,27 @@
                 var data = <%= TreeDB.getTreeString()%>;
                 return data;
             }
-            var tabID = 1; //tab id
-
+            var tabID = 0;  //tab id
+            createTree('#tree1');
+            createTree('#tree2');
             //create the menu
-            $('.tree').treeview({data: getTree(),
+            function createTree(treeID){
+            $(treeID).treeview({
+                data: getTree(),
                 enableLinks: true,
                 levels: 1,
-                showTags: true});
+                showTags: true,
+                color: 'black',
+                backColor: '#F0F0F0'
+            });
             //on node selected
-            /**/ $('.tree').on('nodeSelected', function (e, node) {
+            /**/ $(treeID).on('nodeSelected', function (e, node) {
                 if (typeof node['nodes'] == "undefined") {
 
                     //new tab
                     tabID++;
-                    $('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
+                    $('#tab-list').append($('<li class="tabclass"><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
+
                     //Content panel of the new tab
                     $('<div class="tab-pane" id="tab' + tabID + '">' + node.text + '</div>').appendTo('.tab-content');
                     //display new tab
@@ -139,7 +136,7 @@
                         tabLast.tab('show');
                     });
                 }
-            });
+            });}
         </script>
         <script>
             $(document).ready(function () {
@@ -147,7 +144,6 @@
             });
         </script>
         <script type="text/javascript">
-
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-36251023-1']);
             _gaq.push(['_setDomainName', 'jqueryscript.net']);
@@ -162,6 +158,5 @@
             })();
 
         </script>
-
     </body>
 </html>

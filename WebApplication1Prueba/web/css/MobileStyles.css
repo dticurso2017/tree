@@ -1,21 +1,18 @@
 
-/* Móviles en horizontal o tablets en vertical
-   ------------------------------------------------------------------------- */
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
     body{
-        size: 500px;
-    }
+        height: 700px;    }
     .list-group-item{
         background-color: #000;
     }
     .dropdown-item{
-        font-size: 150%;
+        font-size: 120%;
     }
     .close{
-        font-size: 150%;
+        font-size: 120%;
     }
     .glyphicon{
-        font-size: 200%;
+        font-size: 150%;
     }
     .w3-sidebar{
         width: 70%;  
@@ -23,58 +20,34 @@
     #casa{
         display: none;
     }
-    .sm-mb{
-      display: block;
-      color:white;
+    div.sm-mb{
+        display: block;
     }
-    .sxl-mb{
-      display: none;
+    div.sxl-mb{
+        display: none;
     }
-    
 }
-/* Tablets en horizonal y escritorios normales
-   ------------------------------------------------------------------------- */
-@media (min-width: 1024px) {
-    
+
+@media (min-width: 1024px) { 
+
     .glyphicon{
         font-size: 100%; 
     }
-    .w3-sidebar{
-        width: 15%;  
-    } 
     .contenido{
-        padding-left: 18%;
+        padding-left: 15%;
+        margin-left: 2%;
     }
-    .sxl-mb{
-      display: block;
+    div.sxl-mb{
+        display: block;
     }
-    .sm-mb{
-      display: none;
-    }
-    
-}
-/* Escritorios muy anchos
-   ------------------------------------------------------------------------- */
-@media (min-width: 1200px) { 
-    
-    .glyphicon{
-        font-size: 100%; 
+    div.sm-mb{
+        display: none;
     }
     .w3-sidebar{
-        width: 15%;  
+        width: 16%;  
     } 
-    .contenido{
-        padding-left: 18%;
-    }
-    .sxl-mb{
-      display: block;
-      
-    }
-    .sm-mb{
-      display: none;
-    }
-    
 }
+/*global*/
 
 .glyphicon-plus, .glyphicon-minus,.glyphicon-log-out{
     font-size: 100%;

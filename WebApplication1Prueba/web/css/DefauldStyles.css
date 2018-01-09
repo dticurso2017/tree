@@ -3,6 +3,34 @@
 -- user: glyphicon glyphicon-user --
 -- colapse: glyphicon glyphicon-menu-hamburger --
 */
+/*colors:
+claro
+1:#F0F0F0
+2:#B4B4B4
+3:#828282
+4:#6E6E6E
+5:#4B4B4B
+oscuro
+*/
+.node-selected{
+    color: #000!important;
+    background-color: #fff!important;
+} 
+a:hover{
+    background-color: transparent;
+    color: #000!important;
+}
+a,a:link{
+  text-decoration: none;
+  color:#000!important;
+}
+a,span{
+  text-decoration: none;
+}
+lu>li>a:hover{
+    background-color: #B4B4B4!important;
+    text-decoration: none;
+}
 body{
   font-family: 'Nunito', 'Nunito Sans', sans-serif;
 }
@@ -15,32 +43,18 @@ h1{
 p{
   margin: 5%;
 }
-a{
-  text-decoration: none;
-}
-a,span{
-  text-decoration: none;
-}
-.glyphicon-user{
-  color:#337ab7 ;
-}
-.glyphicon-menu-hamburger{
-  color: #337ab7;
-}
+
 .w3-sidebar{
-  background-color: #e6e5e5;
+  background-color: #828282;
 }
 .w3-teal{
-  background-color: #e6e5e5;
+  background-color: #828282;
 }
 .tab-list{
   border: none;
 }
-#tree{
-  margin-left: 2%;  
-}
 .node-tree{
-  background-color: #fff;
+  color: #000;
 }
 .container{
   float: none;
@@ -59,16 +73,16 @@ lis,.list-group-item{
   padding: 0%;
 }
 .list-group-item{
-  padding-top: 1%;
-  padding-bottom:  1%; 
+  padding: 1%;
   border: none !important;
   border-radius: 4px !important;
+  background-color: #fff!important;
 }
 .tabs-left > li > a:hover{
   color: #000;
 }
 .w3-teal>a{
-  background-color: #999!important;
+  background-color: #6E6E6E!important;
 }
 .list-group-item>a{
   padding-left: 2%;
@@ -88,6 +102,10 @@ lis,.list-group-item{
   margin-right: 10%;
   margin-left: 5%;
 }
-#taborigin1{
-    display:none;
+#hometab{
+    display: none;
+}
+.tabs-left{
+    border: 0px!important;
+    padding: 0px!important;
 }

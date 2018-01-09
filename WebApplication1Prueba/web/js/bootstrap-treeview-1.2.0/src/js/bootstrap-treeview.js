@@ -41,14 +41,14 @@
 		checkedIcon: 'glyphicon glyphicon-check',
 		uncheckedIcon: 'glyphicon glyphicon-unchecked',
 
-		color: undefined, // '#000000',
-		backColor: undefined, // '#FFFFFF',
-		borderColor: undefined, // '#dddddd',
+		color: '#000000', // '#000000',
+		backColor: '#FFFFFF', // '#FFFFFF',
+		borderColor: '#dddddd', // '#dddddd',
 		onhoverColor: '#F5F5F5',
-		selectedColor: '#FFFFFF',
-		selectedBackColor: '#428bca',
-		searchResultColor: '#D9534F',
-		searchResultBackColor: undefined, //'#FFFFFF',
+		selectedColor: '#000000',
+		selectedBackColor: '#FFFFFF',//'#428bca'
+		searchResultColor: '#FFFFFF',//'#D9534F'
+		searchResultBackColor: '#FFFFFF', //'#FFFFFF',
 
 		enableLinks: false,
 		highlightSelected: true,
@@ -628,10 +628,12 @@
 
 		if (this.options.highlightSelected && node.state.selected) {
 			if (this.options.selectedColor) {
-				color = this.options.selectedColor;
+				//color = this.options.selectedColor;
+                                color = "#000000";
 			}
 			if (this.options.selectedBackColor) {
-				backColor = this.options.selectedBackColor;
+				//backColor = this.options.selectedBackColor;
+                                backColor = "#FFFFFF";
 			}
 		}
 

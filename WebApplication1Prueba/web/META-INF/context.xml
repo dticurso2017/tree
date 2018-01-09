@@ -6,3 +6,4 @@
 		username="DAF" password="DTI" driverClassName="com.mysql.jdbc.Driver" 
 		url="jdbc:mysql://213.27.250.4:48340/test" />
 </Context>
+<!--  jdbc:mysql://localhost:33340/test -->
