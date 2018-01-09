@@ -1,7 +1,7 @@
 
 /* Móviles en horizontal o tablets en vertical
    ------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
+@media (max-width: 500px) {
     body{
         font-size: 150%;
     }
@@ -59,7 +59,7 @@
         font-size: 100%; 
     }
     .w3-sidebar{
-        width: 15%;  
+        width: 10%;  
     } 
     .w3-container{
         margin-left: 200px;

@@ -143,3 +143,39 @@ body {
 }
 
 
+
+
+@media (max-width: 991px) { 
+ .panel-login {
+  font-size: 30px;
+  width: 120%;
+  margin-left: -10%;
+ }
+
+ #register-form-link {
+  font-size: 40px;
+ }
+
+ #login-form-link {
+  font-size: 40px;
+ }
+
+ .btn-login {
+  font-size: 45px;
+ }
+
+ #username {
+  font-size: 35px;
+ }
+
+ #password {
+  font-size: 35px;
+ }
+}
+
+
+@media (max-width: 1199px) {
+
+
+
+}

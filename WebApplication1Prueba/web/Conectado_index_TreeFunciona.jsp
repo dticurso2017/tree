@@ -105,7 +105,8 @@
         levels: 1,
         showTags: true});
       //on node selected
-      /**/ $('.tree').on('nodeSelected', function (e, node) {
+      /**/ $('.tree').on('nodeSelected', function (e, node) {  
+       
         if (typeof node['nodes'] == "undefined") {
 
           //new tab
@@ -131,6 +132,11 @@
           });
 
         }
+        
+        $('.tree').treeview('toggleNodeExpanded', [ node.nodeId, { silent: true }]);
+        $('.tree').treeview('unselectNode', [ node.nodeId, { silent: true } ]);        
+        
+        
       });
     </script>
     <script>
