@@ -6,7 +6,7 @@ $(function () {
    setTimeout(function () {
     document.getElementById('login-submit').style.visibility = 'hidden';
     document.getElementById('cargando').style.visibility = 'visible';
-   }, 100);
+   }, 200);
   }
  });
 });

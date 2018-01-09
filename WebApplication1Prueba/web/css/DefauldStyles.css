@@ -73,19 +73,20 @@ lis,.list-group-item{
   padding: 0%;
 }
 .list-group-item{
-  padding: 1%;
+  padding: 2%;
   border: none !important;
-  border-radius: 4px !important;
-  background-color: #fff!important;
+}
+.list-group-item:last-child,.list-group-item:first-child{
+    border-radius: 0px!important;
+}
+a:hover{
+    background-color:#F0F0F0; 
 }
 .tabs-left > li > a:hover{
   color: #000;
 }
 .w3-teal>a{
   background-color: #6E6E6E!important;
-}
-.list-group-item>a{
-  padding-left: 2%;
 }
 .nav-tabs>li>a{
   border: none;
@@ -108,4 +109,11 @@ lis,.list-group-item{
 .tabs-left{
     border: 0px!important;
     padding: 0px!important;
+}
+.w3-button:hover{
+    background-color: transparent!important;
+}
+.tab-pane{
+    padding-left: 3%;
+    margin-top: 2%;
 }

@@ -104,39 +104,42 @@
             createTree('#tree1');
             createTree('#tree2');
             //create the menu
-            function createTree(treeID){
-            $(treeID).treeview({
-                data: getTree(),
-                enableLinks: true,
-                levels: 1,
-                showTags: true,
-                color: 'black',
-                backColor: '#F0F0F0'
-            });
-            //on node selected
-            /**/ $(treeID).on('nodeSelected', function (e, node) {
-                if (typeof node['nodes'] == "undefined") {
+            function createTree(treeID) {
+                $(treeID).treeview({
+                    data: getTree(),
+                    enableLinks: true,
+                    levels: 1,
+                    showTags: true,
+                    color: 'black',
+                    backColor: '#F0F0F0'
+                });
+                //on node selected
+                /**/ $(treeID).on('nodeSelected', function (e, node) {
+                    if (typeof node['nodes'] == "undefined") {
 
-                    //new tab
-                    tabID++;
-                    $('#tab-list').append($('<li class="tabclass"><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
+                        //new tab
+                        tabID++;
+                        $('#tab-list').append($('<li class="tabclass"><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
 
-                    //Content panel of the new tab
-                    $('<div class="tab-pane" id="tab' + tabID + '">' + node.text + '</div>').appendTo('.tab-content');
-                    //display new tab
-                    $('#home').tab('show');
-                    $('#tab-pane a:last').tab('show');
-                    //close tabs
-                    $('#tab-list').on('click', '.close', function () {
-                        var tabID = $(this).parents('a').attr('href');
-                        $(this).parents('li').remove();
-                        $(tabID).remove();
-                        //show the previous tab opened
-                        var tabLast = $('#tab-list a:last');
-                        tabLast.tab('show');
-                    });
-                }
-            });}
+                        //Content panel of the new tab
+                        $('<div class="tab-pane" id="tab' + tabID + '">' + node.text + '</div>').appendTo('.tab-content');
+                        //display new tab
+                        $('#home').tab('show');
+                        $('#tab-pane a:last').tab('show');
+                        //close tabs
+                        $('#tab-list').on('click', '.close', function () {
+                            var tabID = $(this).parents('a').attr('href');
+                            $(this).parents('li').remove();
+                            $(tabID).remove();
+                            //show the previous tab opened
+                            var tabLast = $('#tab-list a:last');
+                            tabLast.tab('show');
+                        });
+                    }
+                    $(treeID).treeview('toggleNodeExpanded', [node.nodeId, {silent: true}]);
+                    $(treeID).treeview('unselectNode', [node.nodeId, {silent: true}]);
+                });
+            }
         </script>
         <script>
             $(document).ready(function () {

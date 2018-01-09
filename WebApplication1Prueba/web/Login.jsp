@@ -49,7 +49,7 @@
     datosUsuario.setErrorLogin("");
     datosUsuario.setErrorRegistro("");
     datosUsuario.setUser(usuario);
-    Thread.sleep(500);
+    Thread.sleep(400);
     response.sendRedirect("Conectado_index.jsp");
    } else {
     datosUsuario.setErrorLogin("Usuario no existente");
