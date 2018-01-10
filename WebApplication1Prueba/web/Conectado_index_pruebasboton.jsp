@@ -116,13 +116,17 @@
             //on node selected
             /**/ $('#tree').on('nodeSelected', function (e, node) {
                 if (typeof node['nodes'] == "undefined") {
-                    
+                 
                     //new tab
-                    tabID++;
-                    $('#tab-list').append($('<li class="tabclass"><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
-
+                    tabID = node.text.replace(/\s/g,"_");
+                    
+                    if (document.getElementById(tabID) === null){
+                    
+                    $('#tab-list').append($('<li class="tabclass"><a href="#' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
+                    
                     //Content panel of the new tab
-                    $('<div class="tab-pane" id="tab' + tabID + '">' + node.text + '</div>').appendTo('.tab-content');
+                    $('<div class="tab-pane" id="' + tabID + '">' + node.text + '</div>').appendTo('.tab-content');
+                    
                     //display new tab
                     $('#home').tab('show');
                     $('#tab-pane a:last').tab('show');
@@ -130,14 +134,16 @@
 
                     //close tabs
                     $('#tab-list').on('click', '.close', function () {
-                        var tabID = $(this).parents('a').attr('href');
+                        
+                        tabID = $(this).parents('a').attr('href');
+                        tabID = null;
+                        $("#"+tabID).remove();
                         $(this).parents('li').remove();
                         $(tabID).remove();
-
                         //show the previous tab opened
                         var tabLast = $('#tab-list a:last');
                         tabLast.tab('show');
-                    });
+                    });}
 
                 }
             });
