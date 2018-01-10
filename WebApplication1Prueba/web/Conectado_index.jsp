@@ -56,10 +56,45 @@
                                 <span class="glyphicon glyphicon-user"></span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
-                                </jsp:useBean>
-                                <li class="dropdown-item"><a> <%=datosUsuario.getUser()%></a></li>
-                                <li class="dropdown-item"><a href="index.jsp">Sign Out  <span class="glyphicon glyphicon-log-out "></span></a></li>
+                                <li class="dropdown-item"><a id="username"></a></li>
+                                <li class="dropdown-item"><a href="index.jsp"  onclick="signOut()">Sign Out  <span class="glyphicon glyphicon-log-out ">
+                                </span></a></li>
+                                <meta name="google-signin-client_id" 
+                                      content="215508450936-s45rubl83k8amm91p1qv0tbvmjrq6kkr.apps.googleusercontent.com">
+                                <script>
+
+                                    function signOut() {
+                                        var auth2 = gapi.auth2.getAuthInstance();
+                                        auth2.signOut().then(function () {
+                                            deleteCookie("username");
+                                            console.log('User signed out.');
+                                        });
+
+                                    }
+                                    function onLoad() {
+                                        gapi.load('auth2', function () {
+                                            gapi.auth2.init();
+                                            var username = getCookie("username");
+                                            if (username != null) {
+                                                document.getElementById("username").innerHTML = username;
+                                            } else {
+
+                                            }
+                                        });
+                                    }
+
+                                    function getCookie(name) {
+                                        var value = "; " + document.cookie;
+                                        var parts = value.split("; " + name + "=");
+                                        if (parts.length == 2)
+                                            return parts.pop().split(";").shift();
+                                    }
+
+                                    function deleteCookie(name) {
+                                        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                                    }
+                                </script>
+                                <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
                             </ul>
                         </div>
                     </li>
