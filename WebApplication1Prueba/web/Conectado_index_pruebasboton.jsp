@@ -49,7 +49,6 @@
                             <span class="glyphicon glyphicon-home">   
                             </span>
                         </button>
-                        
                     </li>
                     <li>
                         <div class="btn-group pull-right">
