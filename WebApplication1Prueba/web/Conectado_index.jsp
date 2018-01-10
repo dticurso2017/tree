@@ -38,49 +38,51 @@
             TreeDB tree = new TreeDB();
             tree.buildTree();
         %>
-        <div class="w3-container">
-            <nav class="navbar navbar-fixed-top">
-                <ul class="nav">
-                    <li>
-                        <button id="hamburguesa" class="w3-button w3-teal w3-xlarge w3-hide-large pull-left" onclick="hamburguesa()">
-                            <li><span class="glyphicon glyphicon-menu-hamburger "></span></li>
-                        </button>
-                        <button  id="casa" name="data" class="w3-button w3-teal w3-xlarge pull-left"  type="button" onclick="getHome()">
-                            <span class="glyphicon glyphicon-home">   
-                            </span>
-                        </button>
-                    </li>
-                    <li>
-                        <div class="btn-group pull-right">
-                            <button class="w3-button w3-teal w3-xlarge dropdown-toggle pull-right" data-toggle="dropdown">
-                                <span class="glyphicon glyphicon-user"></span>
+             <nav class="navbar navbar-fixed-top col-lg col-sm">
+                <div class="container-fluid">
+                    <ul class="nav ">
+                        <li>
+                            <button id="hamburguesa" class="btn pull-left hidden-lg" onclick="hamburguesa()">
+                                <li><span class="glyphicon glyphicon-menu-hamburger "></span></li>
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
-                                </jsp:useBean>
-                                <li class="dropdown-item"><a> <%=datosUsuario.getUser()%></a></li>
-                                <li class="dropdown-item"><a href="index.jsp">Sign Out  <span class="glyphicon glyphicon-log-out "></span></a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+                            <button  id="casa" name="data" class="btn pull-left hidden-sm hidden-md hidden-xs"  type="button" onclick="getHome()">
+                                <span class="glyphicon glyphicon-home">   
+                                </span>
+                            </button>
+                        </li>
+                        <li>
+                            <div class="btn-group pull-right">
+                                <button class="btn dropdown-toggle pull-right" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
+                                    </jsp:useBean>
+                                    <li class="dropdown-item"><a> <%=datosUsuario.getUser()%></a></li>
+                                    <li class="dropdown-item"><a href="index.jsp">Sign Out  <span class="glyphicon glyphicon-log-out "></span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </nav>
-        </div>
-        <div class="content2">
-            <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" id="mySidebar" onsubmit="return false">
-                <div id="tree1" class="tree sm-mb" ></div>
-                <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
-                    <li class="tabclass active" id="hometab"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
-                </ul>
-            </div>
-            <div class="tab-content contenido">
-                <div class="tab-pane active" id="home">
-                    <div id="tree2" class="tree sxl-mb" >
+            <div class="container-fluid">
+                <div class="col-lg col-sm">
+                    <div id="mySidebar" class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left col-lg"  onsubmit="return false">
+                        <div id="tree1" class="tree hidden-lg" ></div>
+                        <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
+                            <li class="tabclass active" id="hometab"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content contenido">
+                        <div class="tab-pane active" id="home">
+                            <div id="tree2" class="tree hidden-sm hidden-md" >
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <script>
+         <script>
             function hamburguesa() {
                 $("#mySidebar").toggle();
             }

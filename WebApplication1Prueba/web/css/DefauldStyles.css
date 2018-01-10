@@ -16,11 +16,14 @@ oscuro
     color: #000!important;
     background-color: #fff!important;
 } 
+.glyphicon{
+    font-size: 150%;
+}
 .nav{
     background-color: #828282;
 }
 .content2{
-    padding-top: 4%;
+    margin-top: 3%;
 }
 a:hover{
     background-color: transparent;
@@ -29,6 +32,7 @@ a:hover{
 a,a:link{
     text-decoration: none;
     color:#000!important;
+    margin-left: 2%;
 }
 a,span{
     text-decoration: none;
@@ -39,7 +43,6 @@ lu>li>a:hover{
 }
 body{
     font-family: 'Nunito', 'Nunito Sans', sans-serif;
-    
 }
 .close{
     color:#000!important;
@@ -50,7 +53,6 @@ h1{
 p{
     margin: 5%;
 }
-
 .w3-sidebar{
     background-color: #828282;
 }
@@ -111,10 +113,15 @@ a:hover{
     border: 0px!important;
     padding: 0px!important;
 }
-.w3-button:hover{
+.btn,.btn:hover{
+    border-radius: 0px!important;
     background-color: transparent!important;
 }
+
 .tab-pane{
-    padding-left: 3%;
+    padding-left: 15%;
     margin-top: 2%;
+}
+.container-fluid{
+    padding: 0px!important;
 }

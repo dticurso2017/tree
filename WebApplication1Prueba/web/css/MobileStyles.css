@@ -1,7 +1,8 @@
-
-@media screen and (max-width: 1000px) {
+/*
+@media (max-width: 900px) {
     body{
         height: 700px;    
+        font-size: 250%;
     }
     .list-group-item{
         background-color: #000;
@@ -11,9 +12,6 @@
     }
     .close{
         font-size: 120%;
-    }
-    .glyphicon{
-        font-size: 150%;
     }
     .w3-sidebar{
         width: 70%;  
@@ -27,9 +25,12 @@
     div.sxl-mb{
         display: none;
     }
+    .content2{
+        margin-top: 5%;
+    }
 }
 
-@media screen and (min-width: 900px) { 
+@media (min-width: 900px) { 
     .glyphicon{
         font-size: 100%; 
     }
@@ -45,9 +46,6 @@
     .w3-sidebar{
         width: 16%;  
     } 
-}
+}*/
 /*global*/
 
-.glyphicon-plus, .glyphicon-minus,.glyphicon-log-out{
-    font-size: 100%;
-}
