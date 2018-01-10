@@ -1,7 +1,9 @@
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1000px) {
     body{
-        height: 700px;    }
+        height: 700px;    
+        width: 800px;
+    }
     .list-group-item{
         background-color: #000;
     }
@@ -28,8 +30,10 @@
     }
 }
 
-@media (min-width: 1024px) { 
-
+@media screen and (min-width: 900px) { 
+    body{
+        width: 800px;
+    }
     .glyphicon{
         font-size: 100%; 
     }

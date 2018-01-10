@@ -44,6 +44,7 @@
             <div class="w3-teal">
                 <div class="w3-container">
                     <div class="nav">
+
                         <li>
                             <button id="hamburguesa" class="w3-button w3-teal w3-xlarge w3-hide-large pull-left" onclick="hamburguesa()">
                                 <li><span class="glyphicon glyphicon-menu-hamburger "></span></li>
@@ -64,6 +65,7 @@
                                 </ul>
                             </div>
                         </li>
+
                     </div>
                 </div>
             </div>
@@ -74,14 +76,14 @@
                     <li class="tabclass active" id="hometab"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
                 </ul>
             </div>              
-            <div class="w3-container ">
+            
                 <div class="tab-content contenido">
                     <div class="tab-pane active" id="home">
                         <div id="tree2" class="tree sxl-mb" >
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </div>
         <script>
             function hamburguesa() {
@@ -118,23 +120,27 @@
                     if (typeof node['nodes'] == "undefined") {
 
                         //new tab
-                        tabID++;
-                        $('#tab-list').append($('<li class="tabclass"><a href="#tab' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
+                        tabID = node.text.replace(/\s/g, "_");
+                        if (document.getElementById(tabID) === null) {
+                            $('#tab-list').append($('<li class="tabclass"><a href="#' + tabID + '" role="tab" data-toggle="tab">' + node.text + '&nbsp' + '&nbsp' + '&nbsp' + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
 
-                        //Content panel of the new tab
-                        $('<div class="tab-pane" id="tab' + tabID + '">' + node.text + '</div>').appendTo('.tab-content');
-                        //display new tab
-                        $('#home').tab('show');
-                        $('#tab-pane a:last').tab('show');
-                        //close tabs
-                        $('#tab-list').on('click', '.close', function () {
-                            var tabID = $(this).parents('a').attr('href');
-                            $(this).parents('li').remove();
-                            $(tabID).remove();
-                            //show the previous tab opened
-                            var tabLast = $('#tab-list a:last');
-                            tabLast.tab('show');
-                        });
+                            //Content panel of the new tab
+                            $('<div class="tab-pane" id="' + tabID + '">' + node.text + '</div>').appendTo('.tab-content');
+                            //display new tab
+                            $('#home').tab('show');
+                            $('#tab-pane a:last').tab('show');
+                            //close tabs
+                            $('#tab-list').on('click', '.close', function () {
+                                tabID = $(this).parents('a').attr('href');
+                                tabID = null;
+                                $("#" + tabID).remove();
+                                $(this).parents('li').remove();
+                                $(tabID).remove();
+                                //show the previous tab opened
+                                var tabLast = $('#tab-list a:last');
+                                tabLast.tab('show');
+                            });
+                        }
                     }
                     $(treeID).treeview('toggleNodeExpanded', [node.nodeId, {silent: true}]);
                     $(treeID).treeview('unselectNode', [node.nodeId, {silent: true}]);

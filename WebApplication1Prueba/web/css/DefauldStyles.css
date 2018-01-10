@@ -16,65 +16,69 @@ oscuro
     color: #000!important;
     background-color: #fff!important;
 } 
+.nav{
+    background-color: #828282;
+}
+.content2{
+    padding-top: 4%;
+}
 a:hover{
     background-color: transparent;
     color: #000!important;
 }
 a,a:link{
-  text-decoration: none;
-  color:#000!important;
+    text-decoration: none;
+    color:#000!important;
 }
 a,span{
-  text-decoration: none;
+    text-decoration: none;
 }
 lu>li>a:hover{
     background-color: #B4B4B4!important;
     text-decoration: none;
 }
 body{
-  font-family: 'Nunito', 'Nunito Sans', sans-serif;
+    font-family: 'Nunito', 'Nunito Sans', sans-serif;
+    
 }
 .close{
- color:#000!important;
+    color:#000!important;
 }
 h1{
-  text-transform: capitalize;
+    text-transform: capitalize;
 }
 p{
-  margin: 5%;
+    margin: 5%;
 }
 
 .w3-sidebar{
-  background-color: #828282;
-}
-.w3-teal{
-  background-color: #828282;
+    background-color: #828282;
 }
 .tab-list{
-  border: none;
+    border: none;
 }
 .node-tree{
-  color: #000;
+    color: #000;
 }
 .container{
-  float: none;
+    float: none;
 }
 .menuIcon{
-  padding: 4%;
+    padding: 4%;
 }
 .userIcon{
-  padding: 4%;
+    padding: 4%;
 }
 lis,.list-group-item{
-  padding: 0px;
+    padding: 0px;
 }
 .list-group collapse {
-  margin:0%;
-  padding: 0%;
+    margin:0%;
+    padding: 0%;
 }
 .list-group-item{
-  padding: 2%;
-  border: none !important;
+    padding: 2%;
+    border: none !important;
 }
 .list-group-item:last-child,.list-group-item:first-child{
     border-radius: 0px!important;
@@ -83,25 +87,22 @@ a:hover{
     background-color:#F0F0F0; 
 }
 .tabs-left > li > a:hover{
-  color: #000;
-}
-.w3-teal>a{
-  background-color: #6E6E6E!important;
+    color: #000;
 }
 .nav-tabs>li>a{
-  border: none;
+    border: none;
 }
 .sidenav {
-  height: 100%;
-  padding-left: 2%;
+    height: 100%;
+    padding-left: 2%;
 }
 .container-cabecera{
-  align-content: flex-end;
-  padding-right: 1.5%;
+    align-content: flex-end;
+    padding-right: 1.5%;
 }
 .loggin-button {
-  margin-right: 10%;
-  margin-left: 5%;
+    margin-right: 10%;
+    margin-left: 5%;
 }
 #hometab{
     display: none;
