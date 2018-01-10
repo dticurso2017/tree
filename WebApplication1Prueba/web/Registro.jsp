@@ -57,7 +57,8 @@
 
                 datosUsuario.setErrorLogin("");
                 datosUsuario.setErrorRegistro("");
-                datosUsuario.setUser(usuario);
+                Cookie username = new Cookie("username", usuario);
+                response.addCookie(username);
                 response.sendRedirect("Conectado_index.jsp");
             }
         } catch (Exception e) {

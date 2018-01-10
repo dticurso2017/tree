@@ -12,6 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="shortcut icon" href="favicon.ico" />
 
@@ -38,51 +39,54 @@
             TreeDB tree = new TreeDB();
             tree.buildTree();
         %>
-             <nav class="navbar navbar-fixed-top col-lg col-sm">
-                <div class="container-fluid">
-                    <ul class="nav ">
-                        <li>
-                            <button id="hamburguesa" class="btn pull-left hidden-lg" onclick="hamburguesa()">
-                                <li><span class="glyphicon glyphicon-menu-hamburger "></span></li>
+        <nav class="navbar navbar-fixed-top col-lg col-sm">
+            <div class="container-fluid">
+                <ul class="nav ">
+                    <li>
+                        <button id="hamburguesa" class="btn pull-left hidden-lg" onclick="hamburguesa()">
+                            <li><span class="glyphicon glyphicon-menu-hamburger "></span></li>
+                        </button>
+                        <button  id="casa" name="data" class="btn pull-left hidden-sm hidden-md hidden-xs"  type="button" onclick="getHome()">
+                            <span class="glyphicon glyphicon-home">   
+                            </span>
+                        </button>
+                    </li>
+                    <li>
+                        <div class="btn-group pull-right">
+                            <button class="btn dropdown-toggle pull-right" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-user"></span>
                             </button>
-                            <button  id="casa" name="data" class="btn pull-left hidden-sm hidden-md hidden-xs"  type="button" onclick="getHome()">
-                                <span class="glyphicon glyphicon-home">   
-                                </span>
-                            </button>
-                        </li>
-                        <li>
-                            <div class="btn-group pull-right">
-                                <button class="btn dropdown-toggle pull-right" data-toggle="dropdown">
-                                    <span class="glyphicon glyphicon-user"></span>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
-                                    </jsp:useBean>
-                                    <li class="dropdown-item"><a> <%=datosUsuario.getUser()%></a></li>
-                                    <li class="dropdown-item"><a href="index.jsp">Sign Out  <span class="glyphicon glyphicon-log-out "></span></a></li>
-                                </ul>
-                            </div>
-                        </li>
+                            <ul class="dropdown-menu dropdown-menu-right">
+
+                                <li class="dropdown-item"><a id="username"></a></li>
+                                <li class="dropdown-item"><a href="index.jsp" onclick="signOut()">Sign Out  <span class="glyphicon glyphicon-log-out "></span></a></li>
+                                <meta name="google-signin-client_id" 
+                                      content="215508450936-s45rubl83k8amm91p1qv0tbvmjrq6kkr.apps.googleusercontent.com">
+
+                                <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="col-lg col-sm">
+                <div id="mySidebar" class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left col-lg"  onsubmit="return false">
+                    <div id="tree1" class="tree hidden-lg" ></div>
+                    <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
+                        <li class="tabclass active" id="hometab"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
                     </ul>
                 </div>
-            </nav>
-            <div class="container-fluid">
-                <div class="col-lg col-sm">
-                    <div id="mySidebar" class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left col-lg"  onsubmit="return false">
-                        <div id="tree1" class="tree hidden-lg" ></div>
-                        <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
-                            <li class="tabclass active" id="hometab"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
-                        </ul>
-                    </div>
-                    <div class="tab-content contenido">
-                        <div class="tab-pane active" id="home">
-                            <div id="tree2" class="tree hidden-sm hidden-md" >
-                            </div>
+                <div class="tab-content contenido">
+                    <div class="tab-pane active" id="home">
+                        <div id="tree2" class="tree hidden-sm hidden-md" >
                         </div>
                     </div>
                 </div>
             </div>
-         <script>
+        </div>
+        <script>
             function hamburguesa() {
                 $("#mySidebar").toggle();
             }
@@ -90,6 +94,39 @@
                 $(".tabclass.active").removeClass('active');
                 $(".tab-pane.active").removeClass('active');
                 document.getElementById("home").className = "tab-pane active";
+            }
+        </script>
+        <script>
+
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    deleteCookie("username");
+                    console.log('User signed out.');
+                });
+
+            }
+            function onLoad() {
+                gapi.load('auth2', function () {
+                    gapi.auth2.init();
+                    var username = getCookie("username");
+                    if (username != null) {
+                        document.getElementById("username").innerHTML = username;
+                    } else {
+
+                    }
+                });
+            }
+
+            function getCookie(name) {
+                var value = "; " + document.cookie;
+                var parts = value.split("; " + name + "=");
+                if (parts.length == 2)
+                    return parts.pop().split(";").shift();
+            }
+
+            function deleteCookie(name) {
+                document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             }
         </script>
         <script>
