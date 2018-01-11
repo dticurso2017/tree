@@ -142,16 +142,12 @@ body {
  to { transform: scale(1) rotate(360deg);}
 }
 
-
-
-
 @media (max-width: 991px) { 
  .panel-login {
   font-size: 30px;
   width: 120%;
   margin-left: -10%;
  }
-
  #register-form-link {
   font-size: 40px;
  }
@@ -172,8 +168,6 @@ body {
   font-size: 35px;
  }
 }
-
-
 @media (max-width: 1199px) {
 
 

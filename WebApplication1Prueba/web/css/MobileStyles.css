@@ -1,3 +1,16 @@
+@media (max-width:425px){
+    .w3-sidebar{
+        width:70%!important;
+    }
+    #tree2{
+        display: none;
+    }
+}
+@media(min-width:768px) { 
+    .w3-sidebar{
+        width: 30%!important;
+    }
+}
 /*
 @media (max-width: 900px) {
     body{
@@ -29,23 +42,7 @@
         margin-top: 5%;
     }
 }
+*/
 
-@media (min-width: 900px) { 
-    .glyphicon{
-        font-size: 100%; 
-    }
-    .contenido{
-        padding-left: 15%;
-    }
-    div.sxl-mb{
-        display: block;
-    }
-    div.sm-mb{
-        display: none;
-    }
-    .w3-sidebar{
-        width: 16%;  
-    } 
-}*/
 /*global*/
 

@@ -19,8 +19,15 @@ oscuro
 .glyphicon{
     font-size: 150%;
 }
-.nav{
+.navbar{
+    border-radius: 0px!important;
+    border:0px!important;
     background-color: #828282;
+    margin-bottom: 0px!important;
+    min-height: 0px!important;
+}
+.col-lg-2,.col-lg-10{
+    padding: 0px!important;
 }
 .content2{
     margin-top: 3%;
@@ -71,9 +78,6 @@ p{
 .userIcon{
     padding: 4%;
 }
-lis,.list-group-item{
-    padding: 0px;
-}
 .list-group collapse {
     margin:0%;
     padding: 0%;
@@ -117,11 +121,6 @@ a:hover{
     border-radius: 0px!important;
     background-color: transparent!important;
 }
-
-.tab-pane{
-    padding-left: 15%;
-    margin-top: 2%;
-}
 .container-fluid{
-    padding: 0px!important;
+    /*padding: 0px!important;*/
 }
