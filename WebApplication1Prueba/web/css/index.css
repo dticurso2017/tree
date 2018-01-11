@@ -117,6 +117,7 @@ body {
 
 .error-details {
  color: red;
+ margin: 0%!important;
 }
 
 .glyphicon-refresh-animate {

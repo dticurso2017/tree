@@ -25,8 +25,6 @@
         <title>Página Inicial</title>
     </head>
     <body>
-        <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
-        </jsp:useBean>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
@@ -50,7 +48,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <form id="login-form" action="Login.jsp" method="GET" role="form" style="display: block;">
-                                        <p class="error-details"><%=datosUsuario.getErrorLogin()%></p>
+                                        <p class="error-details"><%= (request.getAttribute("error_login") == null ? "" : request.getAttribute("error_login")) %></p>
                                         <div class="form-group">
                                             <input type="text" name="user" id="username" tabindex="1" class="form-control" placeholder="Inserta tu usuario" required>
                                         </div>
@@ -95,7 +93,7 @@
                                     </form>
 
                                     <form id="register-form" action="Registro.jsp" method="GET" role="form" style="display: none;">
-                                        <p class="error-details"><%=datosUsuario.getErrorRegistro()%></p>
+                                        <p class="error-details"><%= (request.getAttribute("error_register") == null ? "" : request.getAttribute("error_register")) %></p>
                                         <div class="form-group">
                                             <input type="text" name="user_register" id="user_register" tabindex="1" class="form-control" placeholder="Inserta un usuario" value="" required>
                                         </div>

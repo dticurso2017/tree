@@ -17,10 +17,6 @@
         <link href="css/DefauldStyles.css" rel="stylesheet" type="text/css"/>
         <title>Error conexión</title>
     </head>
-
-    <%@ page import= "java.sql.*" %>
-    <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
-    </jsp:useBean>
     <%
         String usuario = request.getParameter("user");
         String password = request.getParameter("password");
@@ -46,21 +42,20 @@
 
             register = myQuery.executeQuery();
             if (register.absolute(1)) {
-                datosUsuario.setErrorLogin("");
-                datosUsuario.setErrorRegistro("");
                 Cookie username = new Cookie("username", usuario);
                 response.addCookie(username);
                 Thread.sleep(500);
                 response.sendRedirect("Conectado_index.jsp");
             } else {
-                datosUsuario.setErrorLogin("Usuario no existente");
-                response.sendRedirect("index.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+                request.setAttribute("error_login", "Usuario no existente");
+                rd.include(request, response);
             }
-
         } catch (Exception e) {
-            datosUsuario.setErrorLogin("Error de conexion a la Base de Datos");
             e.printStackTrace();
-            response.sendRedirect("index.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+            request.setAttribute("error_login", "Error de conexion a la Base de Datos");
+            rd.include(request, response);
         } finally {
             // Close the result sets and statements,
             // and the connection is returned to the pool

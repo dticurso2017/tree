@@ -17,9 +17,6 @@
         <link href="css/DefauldStyles.css" rel="stylesheet" type="text/css"/>
         <title>Error conexión</title>
     </head>
-
-    <jsp:useBean id = "datosUsuario" scope="session" class = "DatosConexionBD.DatosUsuario">
-    </jsp:useBean>
     <%
         String usuario = request.getParameter("user_register");
         String password = request.getParameter("password_register");
@@ -45,8 +42,9 @@
             register = myQuery.executeQuery();
 
             if (register.absolute(1)) {
-                datosUsuario.setErrorRegistro("El usuario ya existe, intenta crear otro usuario");
-                response.sendRedirect("index.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+                request.setAttribute("error_register", "El usuario ya existe, intenta crear otro usuario");
+                rd.include(request, response);
             } else {
                 String myQueryInsertStr = "INSERT INTO d_users (user, password, email) VALUES (?, ?, ?)";
                 myQuery = conn.prepareStatement(myQueryInsertStr);
@@ -54,17 +52,15 @@
                 myQuery.setString(2, password);
                 myQuery.setString(3, email);
                 myQuery.executeUpdate();
-
-                datosUsuario.setErrorLogin("");
-                datosUsuario.setErrorRegistro("");
                 Cookie username = new Cookie("username", usuario);
                 response.addCookie(username);
                 response.sendRedirect("Conectado_index.jsp");
             }
         } catch (Exception e) {
-            datosUsuario.setErrorRegistro("Error de conexion a la Base de Datos");
             e.printStackTrace();
-            response.sendRedirect("index.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+            request.setAttribute("error_register", "Error de conexion a la Base de Datos");
+            rd.include(request, response);
         } finally {
             // Close the result sets and statements,
             // and the connection is returned to the pool
