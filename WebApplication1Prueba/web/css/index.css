@@ -98,21 +98,21 @@ body {
 }
 
 .btn-register {
- background-color: #1CB94E;
- outline: none;
- color: #fff;
- font-size: 14px;
- height: auto;
- font-weight: normal;
- padding: 14px 0;
- text-transform: uppercase;
- border-color: #1CB94A;
+ background-color: #1CB94E!important;
+ outline: none!important;
+ color: #fff!important;
+ font-size: 14px!important;
+ height: auto!important;
+ font-weight: normal!important;
+ padding: 14px 0!important;
+ text-transform: uppercase!important;
+ border-color: #1CB94A!important;
 }
 .btn-register:hover,
 .btn-register:focus {
- color: #fff;
- background-color: #1CA347;
- border-color: #1CA347;
+ color: #fff!important;
+ background-color: #1CA347!important;
+ border-color: #1CA347!important;
 }
 
 .error-details {
@@ -125,25 +125,35 @@ body {
  -webkit-animation: spin2 .7s infinite linear!important;
 }
 
+#cargando {
+ padding-top: -50px;
+}
 .btn-warning {
+ text-transform: uppercase!important;
+ height: 51px!important;
+ font-weight: normal!important;
  background-color: orange!important;
  margin-left:0%!important;
- margin-top: -27%!important;
+ margin-top: -29%!important;
  width: 100%!important;
  visibility: hidden;
+ padding-bottom: 6%;
  border: 2px solid orange!important;
  font-size: 14px;
 }
 
 .btn-warning:hover{
+ text-transform: uppercase!important;
+ height: 51px!important;
+ font-weight: normal!important;
  background-color: orange!important;
  margin-left:0%!important;
- margin-top: -27%!important;
+ margin-top: -29%!important;
  width: 100%!important;
  visibility: hidden;
+ padding-bottom: 6%;
  border: 2px solid orange!important;
  font-size: 14px;
-
 }
 
 @-webkit-keyframes spin2 {

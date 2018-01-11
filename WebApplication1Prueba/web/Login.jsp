@@ -4,10 +4,10 @@
     Author     : salademo
 --%>
 
+<%@page import="java.sql.*"%>
 <%@page import="javax.sql.*"%>
 <%@page import="javax.naming.*"%>
 <%@page import="javax.swing.JOptionPane"%>
-<%@page import="java.beans.Statement"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -57,31 +57,25 @@
             request.setAttribute("error_login", "Error de conexion a la Base de Datos");
             rd.include(request, response);
         } finally {
-            // Close the result sets and statements,
-            // and the connection is returned to the pool
-            if (register != null) {
-                try {
+            try {
+                // Close the result sets and statements,
+                // and the connection is returned to the pool
+                if (register != null) {
                     register.close();
-                } catch (SQLException e) {;
+                    register = null;
                 }
-                register = null;
-            }
-            if (myQuery != null) {
-                try {
+                if (myQuery != null) {
                     myQuery.close();
-                } catch (SQLException e) {;
+                    myQuery = null;
                 }
-                myQuery = null;
-            }
-            if (conn != null) {
-                try {
+                if (conn != null) {
                     conn.close();
-                } catch (SQLException e) {;
+                    conn = null;
                 }
-                conn = null;
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
-
     %>
     <body>
 
