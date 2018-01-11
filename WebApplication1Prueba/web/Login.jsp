@@ -28,6 +28,7 @@
 
         Connection conn = null;
         ResultSet register = null;
+        ResultSet register2 = null;
         PreparedStatement myQuery = null;
         try {
 
@@ -46,9 +47,20 @@
                 Thread.sleep(500);
                 response.sendRedirect("Conectado_index.jsp");
             } else {
-                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-                request.setAttribute("error_login", "Usuario no existente");
-                rd.include(request, response);
+                String myQueryStrUser = "SELECT * FROM d_users WHERE user = ?";
+                myQuery = conn.prepareStatement(myQueryStrUser);
+                myQuery.setString(1, usuario);
+
+                register2 = myQuery.executeQuery();
+                if (register2.absolute(1)) {
+                    RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+                    request.setAttribute("error_login", "Usuario existe pero la contraseña es incorrecta");
+                    rd.include(request, response);
+                } else{
+                    RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+                    request.setAttribute("error_login", "Usuario no existente");
+                    rd.include(request, response);
+                }  
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -62,6 +74,10 @@
                 if (register != null) {
                     register.close();
                     register = null;
+                }
+                if (register2 != null) {
+                    register2.close();
+                    register2 = null;
                 }
                 if (myQuery != null) {
                     myQuery.close();
