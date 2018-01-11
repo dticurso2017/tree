@@ -32,6 +32,9 @@ oscuro
 .content2{
     margin-top: 3%;
 }
+.glyphicon:hover{
+    color: #fff;
+}
 a:hover{
     background-color: transparent;
     color: #000!important;
@@ -50,6 +53,7 @@ lu>li>a:hover{
 }
 body{
     font-family: 'Nunito', 'Nunito Sans', sans-serif;
+    font-size: 90%;
 }
 .close{
     color:#000!important;
@@ -83,7 +87,7 @@ p{
     padding: 0%;
 }
 .list-group-item{
-    padding: 2%;
+    padding: 1%;
     border: none !important;
 }
 .list-group-item:last-child,.list-group-item:first-child{
