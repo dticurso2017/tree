@@ -109,12 +109,9 @@
             function onLoad() {
                 gapi.load('auth2', function () {
                     gapi.auth2.init();
-                    var username = getCookie("username");
-                    if (username != null) {
-                        document.getElementById("username").innerHTML = username;
-                    } else {
 
-                    }
+                    var username = getCookie("username");
+                    document.getElementById("username").innerHTML = username;
                 });
             }
 
@@ -129,6 +126,7 @@
                 document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             }
         </script>
+        <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
         <script>
             //data to create the menu in treeview
             function getTree() {
