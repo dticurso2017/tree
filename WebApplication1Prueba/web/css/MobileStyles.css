@@ -1,3 +1,16 @@
+.col-md{
+     width: auto!important;
+     
+}
+.col-sx>#tree1{
+    display: none;
+}
+.col-lg{
+    
+}
+.col-sx{
+    width: 70%!important;
+}
 /*@media (max-width:425px){
     .glyphicon{
         font-size: 170%!important;

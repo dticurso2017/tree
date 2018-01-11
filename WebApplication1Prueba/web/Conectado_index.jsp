@@ -53,7 +53,7 @@
                     </li>
                     <li>
                         <div class="btn-group pull-right">
-                            <button class="btn dropdown-toggle pull-right" data-toggle="dropdown">
+                            <button id="usuario" class="btn dropdown-toggle pull-right" data-toggle="dropdown">
                                 <span class="glyphicon glyphicon-user"></span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-right">
@@ -83,7 +83,7 @@
                 <div class="col-lg-10">
                     <div class="tab-content contenido">
                         <div class="tab-pane active" id="home">
-                            <div id="tree2" class="tree hidden-sm" >
+                            <div id="tree2" class="tree hidden-sm hidden-xs" >
                             </div>
                         </div>
                     </div>
