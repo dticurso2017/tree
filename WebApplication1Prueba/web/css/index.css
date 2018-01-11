@@ -71,21 +71,21 @@ body {
  border-color: #ccc;
 }
 .btn-login {
- background-color: #59B2E0;
- outline: none;
- color: #fff;
- font-size: 14px;
- height: auto;
- font-weight: normal;
- padding: 14px 0;
- text-transform: uppercase;
- border-color: #59B2E6;
+ background-color: #59B2E0!important;
+ outline: none!important;
+ color: #fff!important;
+ font-size: 14px!important;
+ height: auto!important;
+ font-weight: normal!important;
+ padding: 14px 0!important;
+ text-transform: uppercase!important;
+ border-color: #59B2E6!important;
 }
 .btn-login:hover,
 .btn-login:focus {
- color: #fff;
- background-color: #53A3CD;
- border-color: #53A3CD;
+ color: #fff!important;
+ background-color: #53A3CD!important;
+ border-color: #53A3CD!important;
 }
 .forgot-password {
  text-decoration: underline;
@@ -98,21 +98,21 @@ body {
 }
 
 .btn-register {
- background-color: #1CB94E;
- outline: none;
- color: #fff;
- font-size: 14px;
- height: auto;
- font-weight: normal;
- padding: 14px 0;
- text-transform: uppercase;
- border-color: #1CB94A;
+ background-color: #1CB94E!important;
+ outline: none!important;
+ color: #fff!important;
+ font-size: 14px!important;
+ height: auto!important;
+ font-weight: normal!important;
+ padding: 14px 0!important;
+ text-transform: uppercase!important;
+ border-color: #1CB94A!important;
 }
 .btn-register:hover,
 .btn-register:focus {
- color: #fff;
- background-color: #1CA347;
- border-color: #1CA347;
+ color: #fff!important;
+ background-color: #1CA347!important;
+ border-color: #1CA347!important;
 }
 
 .error-details {
@@ -120,16 +120,31 @@ body {
 }
 
 .glyphicon-refresh-animate {
- -animation: spin .7s infinite linear;
- -webkit-animation: spin2 .7s infinite linear;
+ -animation: spin .7s infinite linear!important;
+ -webkit-animation: spin2 .7s infinite linear!important;
 }
 
 .btn-warning {
- margin-left:0%;
- margin-top: -27%;
- width: 100%;
+ height: auto!important;
+ font-weight: normal!important;
+ background-color: orange!important;
+ margin-left:0%!important;
+ margin-top: -27%!important;
+ width: 100%!important;
  visibility: hidden;
- border: 2px solid orange;
+ border: 2px solid orange!important;
+ font-size: 14px;
+}
+
+.btn-warning:hover{
+ background-color: orange!important;
+ margin-left:0%!important;
+ margin-top: -27%!important;
+ width: 100%!important;
+ visibility: hidden;
+ border: 2px solid orange!important;
+ font-size: 14px!important;
+
 }
 
 @-webkit-keyframes spin2 {
