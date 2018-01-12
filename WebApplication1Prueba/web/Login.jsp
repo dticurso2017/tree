@@ -60,7 +60,7 @@
                     RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
                     request.setAttribute("error_login", "Usuario no existente");
                     rd.include(request, response);
-                }  
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
