@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!--links-->
-        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="shortcut icon" href="Images/favicon.ico" />
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
         <!--scripts-->
