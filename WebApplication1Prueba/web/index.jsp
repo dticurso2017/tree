@@ -46,7 +46,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form id="login-form" action="Login.jsp" method="GET" role="form" style="display: block;">
+                                    <form id="login-form" action="Login" method="POST" role="form" style="display: block;">
                                         <p class="error-details"><%= (request.getAttribute("error_login") == null ? "" : request.getAttribute("error_login"))%></p>
                                         <div class="form-group">
                                             <input type="text" name="user" id="username" tabindex="1" class="form-control" placeholder="Usuario" required>
@@ -91,7 +91,7 @@
                                         </script>
                                     </form>
 
-                                    <form id="register-form" action="Registro.jsp" method="GET" role="form" style="display: none;">
+                                    <form id="register-form" action="Register" method="POST" role="form" style="display: none;">
                                         <p class="error-details"><%= (request.getAttribute("error_register") == null ? "" : request.getAttribute("error_register"))%></p>
                                         <div class="form-group">
                                             <input type="text" name="user_register" id="user_register" tabindex="1" class="form-control" placeholder="Usuario" value="" required>
@@ -113,6 +113,7 @@
                                             <div class="row">
                                                 <div class="col-sm-6 col-sm-offset-3">
                                                     <input type="submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Registrarse">
+                                                    <button id="cargando2" class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</button>
                                                 </div>
                                             </div>
                                         </div>
