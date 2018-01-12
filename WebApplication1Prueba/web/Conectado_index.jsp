@@ -62,8 +62,6 @@
                                 <li class="dropdown-item"><a href="index.jsp" onclick="signOut()">Sign Out  <span class="glyphicon glyphicon-log-out "></span></a></li>
                                 <meta name="google-signin-client_id" 
                                       content="215508450936-s45rubl83k8amm91p1qv0tbvmjrq6kkr.apps.googleusercontent.com">
-
-                                <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
                             </ul>
                         </div>
                     </li>
@@ -72,15 +70,15 @@
         </nav>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-2 col-md-3 col-sm-3 col-sx-8">
-                    <div id="mySidebar" class=" col-lg-2 col-md-3 col-sm-3 col-sx-8 w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left "  onsubmit="return false">
+                <div class="col-lg-2 col-md-2  col-sx-8">
+                    <div id="mySidebar" class=" col-lg-2 col-md-2 col-sm-4 col-sx-8 w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left "  onsubmit="return false">
                         <div id="tree1" class="tree hidden-lg hidden-md" ></div>
                         <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
                             <li class="tabclass active" id="hometab"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-9">
+                <div class="col-lg-10 col-md-10">
                     <div class="tab-content contenido">
                         <div class="tab-pane active" id="home">
                             <div id="tree2" class="tree  hidden-sm hidden-xs" >

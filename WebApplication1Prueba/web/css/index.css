@@ -9,6 +9,7 @@ and open the template in the editor.
 */
 body {
     padding-top: 90px;
+    background-color: #ddd;
 }
 .panel-login {
     border-color: #ccc;
@@ -36,11 +37,11 @@ body {
 }
 
 .panel-login>.panel-heading a.login-active{
-    color: #53A3CD;
+    color: #464c56;
 }
 
 .panel-login>.panel-heading a.register-active{
-    color: #029f5b;
+    color: #465649;
 }
 
 .panel-login>.panel-heading hr{
@@ -71,7 +72,7 @@ body {
     border-color: #ccc;
 }
 .btn-login {
-    background-color: #59B2E0!important;
+    background-color: #595959!important;
     outline: none!important;
     color: #fff!important;
     font-size: 14px!important;
@@ -79,13 +80,13 @@ body {
     font-weight: normal!important;
     padding: 14px 0!important;
     text-transform: uppercase!important;
-    border-color: #59B2E6!important;
+    border-color: #595965!important;
 }
 .btn-login:hover,
 .btn-login:focus {
     color: #fff!important;
-    background-color: #53A3CD!important;
-    border-color: #53A3CD!important;
+    background-color: #707070!important;
+    border-color: #707075!important;
 }
 .forgot-password {
     text-decoration: underline;
@@ -98,7 +99,7 @@ body {
 }
 
 .btn-register {
-    background-color: #1CB94E!important;
+    background-color: #595959!important;
     outline: none!important;
     color: #fff!important;
     font-size: 14px!important;
@@ -106,13 +107,13 @@ body {
     font-weight: normal!important;
     padding: 14px 0!important;
     text-transform: uppercase!important;
-    border-color: #1CB94A!important;
+    border-color: #595965!important;
 }
 .btn-register:hover,
 .btn-register:focus {
     color: #fff!important;
-    background-color: #1CA347!important;
-    border-color: #1CA347!important;
+    background-color: #707070!important;
+    border-color: #707075!important;
 }
 
 .error-details {
@@ -134,48 +135,48 @@ body {
 
     height: auto!important;
     font-weight: normal!important;
-    background-color: orange!important;
+    background-color: #595959!important;
     margin-left:0%!important;
     margin-top: -27%!important;
     width: 100%!important;
     visibility: hidden;
-    border: 2px solid orange!important;
+    border: 2px solid grey!important;
     font-size: 14px;
 
     text-transform: uppercase!important;
     height: 51px!important;
     font-weight: normal!important;
-    background-color: orange!important;
+    background-color: grey!important;
     margin-left:0%!important;
     margin-top: -29%!important;
     width: 100%!important;
     visibility: hidden;
     padding-bottom: 6%;
-    border: 2px solid orange!important;
+    border: 2px solid grey!important;
     font-size: 14px;
 
 }
 
 .btn-warning:hover{
 
-    background-color: orange!important;
+    background-color: #595959!important;
     margin-left:0%!important;
     margin-top: -27%!important;
     width: 100%!important;
     visibility: hidden;
-    border: 2px solid orange!important;
+    border: 2px solid grey!important;
     font-size: 14px!important;
 
     text-transform: uppercase!important;
     height: 51px!important;
     font-weight: normal!important;
-    background-color: orange!important;
+    background-color: grey!important;
     margin-left:0%!important;
     margin-top: -29%!important;
     width: 100%!important;
     visibility: hidden;
     padding-bottom: 6%;
-    border: 2px solid orange!important;
+    border: 2px solid grey!important;
     font-size: 14px;
 
 }
