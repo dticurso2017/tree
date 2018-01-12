@@ -43,7 +43,7 @@
             <div class="container-fluid">
                 <ul class="nav ">
                     <li>
-                        <button id="hamburguesa" class="btn pull-left hidden-lg" onclick="hamburguesa()">
+                        <button id="hamburguesa" class="btn pull-left hidden-lg hidden-md" onclick="hamburguesa()">
                             <li><span class="glyphicon glyphicon-menu-hamburger "></span></li>
                         </button>
                         <button  id="casa" name="data" class="btn pull-left hidden-sm hidden-xs"  type="button" onclick="getHome()">
@@ -72,18 +72,18 @@
         </nav>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-2 col-sm-2 col-sx-8">
-                    <div id="mySidebar" class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left "  onsubmit="return false">
-                        <div id="tree1" class="tree hidden-lg" ></div>
+                <div class="col-lg-2 col-md-3 col-sm-3 col-sx-8">
+                    <div id="mySidebar" class=" col-lg-2 col-md-3 col-sm-3 col-sx-8 w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left "  onsubmit="return false">
+                        <div id="tree1" class="tree hidden-lg hidden-md" ></div>
                         <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
                             <li class="tabclass active" id="hometab"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-10">
+                <div class="col-lg-10 col-md-9">
                     <div class="tab-content contenido">
                         <div class="tab-pane active" id="home">
-                            <div id="tree2" class="tree hidden-sm hidden-xs" >
+                            <div id="tree2" class="tree  hidden-sm hidden-xs" >
                             </div>
                         </div>
                     </div>

@@ -94,9 +94,6 @@ p{
 .list-group-item:last-child,.list-group-item:first-child{
     border-radius: 0px!important;
 }
-a:hover{
-    background-color:#F0F0F0; 
-}
 .tabs-left > li > a:hover{
     color: #000;
 }
