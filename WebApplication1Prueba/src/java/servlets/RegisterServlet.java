@@ -68,7 +68,6 @@ public class RegisterServlet extends HttpServlet {
                 myQuery.executeUpdate();
                 Cookie username = new Cookie("username", usuario);
                 response.addCookie(username);
-                Thread.sleep(500);
                 response.sendRedirect("Conectado_index.jsp");
             }
         } catch (Exception e) {

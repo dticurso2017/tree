@@ -113,7 +113,6 @@
                                             <div class="row">
                                                 <div class="col-sm-6 col-sm-offset-3">
                                                     <input type="submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Registrarse">
-                                                    <button id="cargando2" class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</button>
                                                 </div>
                                             </div>
                                         </div>
