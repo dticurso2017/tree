@@ -78,17 +78,6 @@
                                         <meta name="google-signin-client_id" 
                                               content="215508450936-s45rubl83k8amm91p1qv0tbvmjrq6kkr.apps.googleusercontent.com">
                                         <div class="g-signin2" data-onsuccess="onSignIn" data-redirecturi="Conectado_index.jsp"></div>
-                                        <script>
-                                            function onSignIn(googleUser) {
-                                                var profile = googleUser.getBasicProfile();
-                                                console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-                                                console.log('Name: ' + profile.getName());
-                                                console.log('Image URL: ' + profile.getImageUrl());
-                                                console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-                                                document.cookie = "username=" + profile.getName() + "; expires=0";
-                                                window.location.replace("Conectado_index.jsp");
-                                            }
-                                        </script>
                                     </form>
 
                                     <form id="register-form" action="Register" method="POST" role="form" style="display: none;">
@@ -124,5 +113,18 @@
                 </div>
             </div>
         </div>
+        <script>
+            function onSignIn(googleUser) {
+                var profile = googleUser.getBasicProfile();
+                console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                console.log('Name: ' + profile.getName());
+                console.log('Image URL: ' + profile.getImageUrl());
+                console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                var email = "" + profile.getEmail();
+                var username = email.split("@", 1);
+                document.cookie = "username=" + username + "; expires=0";
+                window.location.replace("Conectado_index.jsp");
+            }
+        </script>
     </body>
 </html>
