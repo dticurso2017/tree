@@ -39,21 +39,21 @@
             TreeDB tree = new TreeDB();
             tree.buildTree();
         %>
-        <nav class="navbar navbar-fixed-top col-lg col-sm">
+        <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <ul class="nav ">
                     <li>
                         <button id="hamburguesa" class="btn pull-left hidden-lg" onclick="hamburguesa()">
                             <li><span class="glyphicon glyphicon-menu-hamburger "></span></li>
                         </button>
-                        <button  id="casa" name="data" class="btn pull-left hidden-sm hidden-md hidden-xs"  type="button" onclick="getHome()">
+                        <button  id="casa" name="data" class="btn pull-left hidden-sm hidden-xs"  type="button" onclick="getHome()">
                             <span class="glyphicon glyphicon-home">   
                             </span>
                         </button>
                     </li>
                     <li>
                         <div class="btn-group pull-right">
-                            <button class="btn dropdown-toggle pull-right" data-toggle="dropdown">
+                            <button id="usuario" class="btn dropdown-toggle pull-right" data-toggle="dropdown">
                                 <span class="glyphicon glyphicon-user"></span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-right">
@@ -71,21 +71,26 @@
             </div>
         </nav>
         <div class="container-fluid">
-            <div class="col-lg col-sm">
-                <div id="mySidebar" class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left col-lg"  onsubmit="return false">
-                    <div id="tree1" class="tree hidden-lg" ></div>
-                    <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
-                        <li class="tabclass active" id="hometab"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
-                    </ul>
+            <div class="row">
+                <div class="col-lg-2 col-sm-2 col-sx-8">
+                    <div id="mySidebar" class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left "  onsubmit="return false">
+                        <div id="tree1" class="tree hidden-lg" ></div>
+                        <ul id="tab-list" class="nav nav-pills tabs-left" role="tablist">
+                            <li class="tabclass active" id="hometab"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="tab-content contenido">
-                    <div class="tab-pane active" id="home">
-                        <div id="tree2" class="tree hidden-sm hidden-md" >
+                <div class="col-lg-10">
+                    <div class="tab-content contenido">
+                        <div class="tab-pane active" id="home">
+                            <div id="tree2" class="tree hidden-sm hidden-xs" >
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <script>
             function hamburguesa() {
                 $("#mySidebar").toggle();

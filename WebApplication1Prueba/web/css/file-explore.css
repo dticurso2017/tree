@@ -55,11 +55,11 @@ li.folder-root ul{
     overflow:hidden;
 }
 li.folder-root.closed>ul{
-   opacity:0;
-   max-height:0px;
+    opacity:0;
+    max-height:0px;
 }
 li.folder-root.open>ul{
-   opacity:1;
-   display:block;
-   max-height:1000px;
+    opacity:1;
+    display:block;
+    max-height:1000px;
 }

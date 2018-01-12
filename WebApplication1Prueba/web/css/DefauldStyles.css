@@ -17,13 +17,23 @@ oscuro
     background-color: #fff!important;
 } 
 .glyphicon{
-    font-size: 150%;
+    font-size: 190%;
 }
-.nav{
+.navbar{
+    border-radius: 0px!important;
+    border:0px!important;
     background-color: #828282;
+    margin-bottom: 0px!important;
+    min-height: 0px!important;
+}
+.col-lg-2,.col-lg-10{
+    padding: 0px!important;
 }
 .content2{
     margin-top: 3%;
+}
+#casa:hover,#hamburguesa:hover,#usuario:hover{
+    color: #fff!important;
 }
 a:hover{
     background-color: transparent;
@@ -43,6 +53,7 @@ lu>li>a:hover{
 }
 body{
     font-family: 'Nunito', 'Nunito Sans', sans-serif;
+    font-size: 85%;
 }
 .close{
     color:#000!important;
@@ -54,6 +65,7 @@ p{
     margin: 5%;
 }
 .w3-sidebar{
+
     background-color: #828282;
 }
 .tab-list{
@@ -71,15 +83,12 @@ p{
 .userIcon{
     padding: 4%;
 }
-lis,.list-group-item{
-    padding: 0px;
-}
 .list-group collapse {
     margin:0%;
     padding: 0%;
 }
 .list-group-item{
-    padding: 2%;
+    padding: 1%;
     border: none !important;
 }
 .list-group-item:last-child,.list-group-item:first-child{
@@ -116,12 +125,4 @@ a:hover{
 .btn,.btn:hover{
     border-radius: 0px!important;
     background-color: transparent!important;
-}
-
-.tab-pane{
-    padding-left: 15%;
-    margin-top: 2%;
-}
-.container-fluid{
-    padding: 0px!important;
 }
