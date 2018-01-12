@@ -62,8 +62,6 @@
                                 <li class="dropdown-item"><a href="index.jsp" onclick="signOut()">Sign Out  <span class="glyphicon glyphicon-log-out "></span></a></li>
                                 <meta name="google-signin-client_id" 
                                       content="215508450936-s45rubl83k8amm91p1qv0tbvmjrq6kkr.apps.googleusercontent.com">
-
-                                <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
                             </ul>
                         </div>
                     </li>

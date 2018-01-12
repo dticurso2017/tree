@@ -49,10 +49,10 @@
                                     <form id="login-form" action="Login.jsp" method="GET" role="form" style="display: block;">
                                         <p class="error-details"><%= (request.getAttribute("error_login") == null ? "" : request.getAttribute("error_login"))%></p>
                                         <div class="form-group">
-                                            <input type="text" name="user" id="username" tabindex="1" class="form-control" placeholder="Inserta tu usuario" required>
+                                            <input type="text" name="user" id="username" tabindex="1" class="form-control" placeholder="Usuario" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Inserta tu contraseña" required>
+                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña" required>
                                         </div>
                                         <div class="form-group text-center">
                                             <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
@@ -94,20 +94,20 @@
                                     <form id="register-form" action="Registro.jsp" method="GET" role="form" style="display: none;">
                                         <p class="error-details"><%= (request.getAttribute("error_register") == null ? "" : request.getAttribute("error_register"))%></p>
                                         <div class="form-group">
-                                            <input type="text" name="user_register" id="user_register" tabindex="1" class="form-control" placeholder="Inserta un usuario" value="" required>
+                                            <input type="text" name="user_register" id="user_register" tabindex="1" class="form-control" placeholder="Usuario" value="" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email_register" id="email_register" tabindex="1" class="form-control" placeholder="Inserta e-mail" value="" required>
+                                            <input type="email" name="email_register" id="email_register" tabindex="1" class="form-control" placeholder="E-mail" value="" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password_register" id="password_register" tabindex="2" class="form-control" placeholder="Inserta una contraseña" 
+                                            <input type="password" name="password_register" id="password_register" tabindex="2" class="form-control" placeholder="Contraseña" 
                                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                                                    title="Debe contener al menos un número, una letra mayúscula y una minúscula, y tener al menos 8 o más caracteres" 
                                                    required>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="confirm_password_register" id="confirm_password_register" tabindex="2" class="form-control"
-                                                   placeholder="Ponga la contraseña otra vez" required>
+                                                   placeholder="Confirmar contraseña" required>
                                         </div>
                                         <div class="form-group">
                                             <div class="row">
